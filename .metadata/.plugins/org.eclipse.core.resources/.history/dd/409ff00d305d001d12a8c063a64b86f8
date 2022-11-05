@@ -1,0 +1,63 @@
+package t4;
+
+import javax.script.Bindings;
+import javax.script.Compilable;
+import javax.script.CompiledScript;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
+public class Compiler {
+	
+	private ScriptEngine jEngine;
+	private Compilable compiler;
+	
+	private String sourceCode;
+	private CompiledScript script;
+	private Bindings bindings;
+	
+	private boolean debug;
+	
+	public Compiler() {
+		this(true);
+	}
+	
+	public Compiler(boolean debug) {
+		this.debug = debug;
+		this.jEngine = new ScriptEngineManager().getEngineByName("java");
+		this.compiler = (Compilable) jEngine;
+		this.sourceCode = "public class Main(){"
+				+ "	public static void main(String[] args){"
+				+ "		"
+				+ "	}"
+				+ "}";
+		
+		this.bindings = jEngine.createBindings();
+	}
+	
+	public Compiler(boolean debug, String sourceCode) {
+		this(debug);
+		this.setSourceCode(sourceCode);
+	}
+	
+	public void run() { run(new String[] {""});}
+	
+	public void run(String[] args) {
+		
+	}
+
+	public String getSourceCode() {
+		return sourceCode;
+	}
+
+	public void setSourceCode(String sourceCode) {
+		this.sourceCode = sourceCode;
+	}
+
+	public boolean isDebug() {
+		return debug;
+	}
+
+	public void setDebug(boolean debug) {
+		this.debug = debug;
+	}
+}

@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 
 import com.sun.net.httpserver.HttpServer;
 
+import t4.JavaEngine;
 import util.Utils;
 
 import com.sun.net.httpserver.HttpExchange;
@@ -27,6 +29,17 @@ public class GUIServer {
 	
 	public GUIServer() { this(8080);}
 	
+	//TODO only test Constructor
+	private JavaEngine jEngine;
+	private ByteArrayOutputStream sysBuffer;
+	
+	public GUIServer(int port, JavaEngine jEngine) { 
+		this(port);
+		this.jEngine = jEngine;
+		sysBuffer = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(sysBuffer));
+	}
+	
 	public GUIServer(int port) { 
 		this.resourcesPath = "src/main/resources";
 		this.responses = new HashMap<String, String>();
@@ -37,7 +50,6 @@ public class GUIServer {
 			server = HttpServer.create(new InetSocketAddress(port), 0);
 			
 			server.createContext("/", httpExchange -> requestHandler(httpExchange));
-			
 			server.start();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -66,7 +78,7 @@ public class GUIServer {
 					System.err.print("loadPage :: ERROR");
 					page = "Page not found";
 				}
-				System.out.println(request+","+config.getString(request));
+				//System.out.println(request+","+config.getString(request));
 				responses.put(request, page);
 			});
 		}
@@ -79,6 +91,7 @@ public class GUIServer {
 		loadResponses();
 		
 		String requestURI = httpExchange.getRequestURI().toASCIIString();
+
 		
 		String response = responses.get(requestURI);
 		if (response == null) {
@@ -87,12 +100,22 @@ public class GUIServer {
 				System.err.println("No Default Page found");
 			}
 		}
+		
+		
+		//TODO add to switch case loop at moment only one reaction
+		if(requestURI.indexOf("java") != -1) {
+			String sourceCode = Utils.inputStreamToString(httpExchange.getRequestBody());
+			jEngine.setSourceCode(sourceCode);
+			jEngine.run();
+			response = sysBuffer.toString(StandardCharsets.UTF_8);
+			//sysBuffer.reset();
+			//System.out.println(":::"+response);
+		}
 			
-		System.out.println(requestURI);
+		System.err.println(":::"+requestURI);
+		System.err.println(Utils.inputStreamToString(httpExchange.getRequestBody()));
 		
-		//System.out.println(Utils.inputStreamToString(httpExchange.getRequestBody()));
-		
-	    httpExchange.getResponseHeaders().add("Content-Type", "text/html; charset=UTF-8");
+		httpExchange.getResponseHeaders().add("Content-Type", "text/html; charset=UTF-8");
 	    httpExchange.sendResponseHeaders(200, response.length());
 
 	    OutputStream out = httpExchange.getResponseBody();

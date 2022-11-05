@@ -10,16 +10,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 
 import org.json.JSONObject;
 
+import t4.JavaEngine;
 import util.Utils;
 
 public class ServerMain {
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
-		GUIServer gui = new GUIServer(8989);
+		JavaEngine jEngine = new JavaEngine();
+		
+		GUIServer gui = new GUIServer(8989, jEngine);
 		//JSONObject o = Utils.loadJSON();
 		//o.keys().forEachRemaining((a) -> System.out.println(a)); //TODO use config for routing
 	}

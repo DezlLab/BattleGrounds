@@ -1,0 +1,7 @@
+public class Main{
+
+  public static main(String[] args){
+    String val = (10 % 5 == 2) ? "William" : "Luca";
+    System.out.print("Hallo "+val+" hier ist Server + Compiler in der Alpha Version");
+  }
+}

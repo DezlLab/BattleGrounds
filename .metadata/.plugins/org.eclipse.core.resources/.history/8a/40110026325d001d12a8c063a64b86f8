@@ -1,0 +1,89 @@
+package t4;
+
+import javax.script.Bindings;
+import javax.script.Compilable;
+import javax.script.CompiledScript;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+public class JavaEngine {
+	
+	private ScriptEngine jEngine;
+	private Compilable compiler;
+	
+	private String sourceCode;
+	private CompiledScript compiledScript;
+	private Bindings bindings;
+	
+	private boolean debug;
+	
+	public JavaEngine() {
+		this(true);
+	}
+	
+	public JavaEngine(boolean debug) {
+		this.debug = debug;
+		this.jEngine = new ScriptEngineManager().getEngineByName("java");
+		this.compiler = (Compilable) jEngine;
+		this.sourceCode = "public class Main(){"
+				+ "	public static void main(String[] args){"
+				+ "		System.out.print(\"Hello\"+args[0])"
+				+ "	}"
+				+ "}";
+		
+		this.bindings = jEngine.createBindings();
+	}
+	
+	public JavaEngine(boolean debug, String sourceCode) {
+		this(debug);
+		this.setSourceCode(sourceCode);
+	}
+	
+	public void run() { run(new String[] {""});}
+	
+	public void run(String[] args) {
+		boolean isMain = setArgs(args);
+		try {
+			this.compiledScript = compiler.compile(sourceCode);
+			
+			Object result = compiledScript.eval(bindings);
+			System.out.println("Result: " + result);
+		} catch (ScriptException e) {
+			System.out.println("run :: ERROR");
+			e.printStackTrace();
+		}
+	}
+	
+	private boolean setArgs(String[] args) {
+		//To get String[] args working a line is added as global var and then set with put
+		System.out.println(sourceCode);
+		sourceCode.replaceAll("  ", " ");//Only allow one white space
+		int index = this.sourceCode.indexOf("public static void main(String[] args)");
+		System.out.println(sourceCode);
+		if (index != -1) {
+			System.out.println(sourceCode);
+			sourceCode = sourceCode.substring(0, index) + "public String[] args; " + sourceCode.substring(index);
+			System.out.println(sourceCode);
+			bindings.put("args", new String[] {"make"});
+			return true;
+		}
+		return false;
+	}
+	
+	public String getSourceCode() {
+		return sourceCode;
+	}
+
+	public void setSourceCode(String sourceCode) {
+		this.sourceCode = sourceCode;
+	}
+
+	public boolean isDebug() {
+		return debug;
+	}
+
+	public void setDebug(boolean debug) {
+		this.debug = debug;
+	}
+}

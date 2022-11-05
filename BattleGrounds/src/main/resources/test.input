@@ -1,0 +1,16 @@
+public class Main{
+
+  public static void main(String[] args){
+  	String[] lines = {
+  	"Hi William das ist unser Server",
+  	"& Compiler (aus dem Internet geklaut)",
+  	"von Luca und Theo :]",
+  	"Die aktuelle Version kann",
+  	"allen Java Code ausführen",
+  	"später viellecht dann eigene Sprachen"
+  	};
+  	for(String line : lines){
+  		System.out.print(line + "\n");
+  	}
+  }
+}

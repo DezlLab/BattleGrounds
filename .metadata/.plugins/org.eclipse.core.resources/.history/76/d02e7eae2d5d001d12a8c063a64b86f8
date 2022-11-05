@@ -1,0 +1,12 @@
+package t4;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
+public class Compiler {
+	
+	private ScriptEngineManager manager;
+	private ScriptEngine jEngine;
+	
+	
+}
