@@ -14,7 +14,7 @@
         body : document.getElementById('codeArea').value
     }).then((response) => response.text()).then((text) => {
         document.getElementById('outputArea').value += text;
-        document.getElementById('outputArea').scrollTop = document.getElementById('outputArea').scrollHeight;
+        //document.getElementById('outputArea').scrollTop = document.getElementById('outputArea').scrollHeight;
     })">Run</button><!-- -->
     <textarea readonly style="resize: none; width: 652px; height: 113px;" id = "outputArea">Output:</textarea>
 </body>

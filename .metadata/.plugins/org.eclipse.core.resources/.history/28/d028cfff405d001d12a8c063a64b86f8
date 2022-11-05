@@ -108,7 +108,7 @@ public class GUIServer {
 			jEngine.setSourceCode(sourceCode);
 			jEngine.run();
 			response = sysBuffer.toString(StandardCharsets.UTF_8);
-			sysBuffer.reset();
+			//sysBuffer.reset();
 			//System.out.println(":::"+response);
 			System.err.println(response);
 			//response = "lol";
