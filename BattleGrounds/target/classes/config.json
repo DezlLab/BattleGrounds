@@ -1,0 +1,5 @@
+{
+    "/" : "index.html",
+    "default" : "error404.html",
+    "/console" : "console.html"
+}
