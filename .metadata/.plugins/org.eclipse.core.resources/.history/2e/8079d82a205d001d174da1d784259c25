@@ -1,0 +1,6 @@
+{
+	"srcPath" : "src/main/resources";
+	"default" : "error404.html",
+    "/" : "index.html",
+    "/console" : "console.html"
+}

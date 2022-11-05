@@ -20,8 +20,8 @@ import util.Utils;
 public class ServerMain {
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 		GUIServer gui = new GUIServer(8989);
-		JSONObject o = Utils.loadJSON();
-		o.keys().forEachRemaining((a) -> System.out.println(a)); //TODO use config for routing
+		//JSONObject o = Utils.loadJSON();
+		//o.keys().forEachRemaining((a) -> System.out.println(a)); //TODO use config for routing
 	}
 	
 	public static void print(String text) {
