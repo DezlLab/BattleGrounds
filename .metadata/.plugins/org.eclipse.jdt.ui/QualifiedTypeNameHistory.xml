@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="net.openhft.compiler.CompilerUtils"/>
+    <fullyQualifiedTypeName name="javax.script.ScriptEngineManager"/>
+    <fullyQualifiedTypeName name="javax.script.ScriptEngine"/>
+    <fullyQualifiedTypeName name="javax.script.ScriptException"/>
+</qualifiedTypeNameHistroy>

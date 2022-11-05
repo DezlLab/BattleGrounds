@@ -1,1 +1,362 @@
 2022-11-01 22:50:56,703 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-11-05 01:37:49,899 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-11-05 01:37:50,628 [Worker-2: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 01:37:50,641 [Worker-2: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:50,642 [Worker-2: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:50,646 [Worker-8: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 01:37:50,655 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:50,656 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:50,877 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:37:50,880 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:37:50,886 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:37:50,887 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:37:52,100 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:52,101 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:52,195 [Worker-2: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 01:37:52,200 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:37:52,202 [Worker-2: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:52,202 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:37:52,203 [Worker-2: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:37:52,213 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:37:52,214 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:37:53,333 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:37:53,333 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:37:53,334 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:37:53,335 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:38:24,888 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:38:24,889 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:38:24,891 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:38:24,891 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:40:05,393 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:40:05,394 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:40:05,396 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:40:05,397 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:40:27,862 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:40:27,863 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:40:27,864 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:40:27,865 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:40:43,349 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:40:43,350 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:40:43,351 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:40:43,352 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:41:17,450 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:41:17,451 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:41:17,452 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:41:17,453 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:41:35,080 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:41:35,081 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:41:35,083 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:41:35,084 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:42:31,971 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:42:31,973 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:42:31,975 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:42:31,976 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:43:26,643 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:26,644 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:43:26,646 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:26,646 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:43:36,174 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:36,178 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:43:36,181 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:36,182 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:43:42,899 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:42,900 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:43:42,902 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:42,902 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:43:48,197 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:48,198 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:43:48,200 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:48,201 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:43:57,632 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:57,633 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:43:57,634 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:43:57,634 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:44:44,722 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:44:44,723 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:44:44,724 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:44:44,725 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:46:14,745 [Worker-23: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:46:14,746 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:46:14,748 [Worker-23: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:46:14,749 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:51:03,345 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:51:03,346 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:51:03,347 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:51:03,348 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:51:13,564 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:51:13,566 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:51:13,567 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:51:13,568 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:51:47,403 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:51:47,404 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:51:47,405 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:51:47,405 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:52:03,327 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:52:03,328 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:52:03,329 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:52:03,329 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:52:50,846 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:52:50,850 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:52:50,855 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:52:50,858 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:53:26,149 [Worker-26: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 01:53:26,155 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:53:26,155 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:53:26,173 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.slf4j:slf4j-api:jar:${slf4j.version} is missing, no dependency information available
+2022-11-05 01:53:26,174 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.slf4j:slf4j-simple:jar:${slf4j.version} is missing, no dependency information available
+2022-11-05 01:53:26,209 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:53:26,210 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:53:26,212 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:53:26,212 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:53:27,366 [Worker-7: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/${slf4j.version}/slf4j-api-${slf4j.version}-sources.jar
+2022-11-05 01:53:27,369 [Worker-7: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for org.slf4j:slf4j-api:${slf4j.version}
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.slf4j:slf4j-api:jar:sources:${slf4j.version}
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-11-05 01:53:27,435 [Worker-7: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/${slf4j.version}/slf4j-simple-${slf4j.version}-sources.jar
+2022-11-05 01:53:27,439 [Worker-7: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for org.slf4j:slf4j-simple:${slf4j.version}
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.slf4j:slf4j-simple:jar:sources:${slf4j.version}
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-11-05 01:54:21,315 [Worker-29: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 01:54:21,320 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:54:21,320 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:54:21,337 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.slf4j:slf4j-simple:jar:${slf4j.version} is missing, no dependency information available
+2022-11-05 01:54:21,370 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:54:21,371 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:54:21,373 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:54:21,373 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:54:22,576 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/${slf4j.version}/slf4j-simple-${slf4j.version}-javadoc.jar
+2022-11-05 01:54:22,580 [Worker-26: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for org.slf4j:slf4j-simple:${slf4j.version}
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.slf4j:slf4j-simple:jar:javadoc:${slf4j.version}
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:294) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-11-05 01:54:28,567 [Worker-28: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 01:54:28,571 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:54:28,572 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 01:54:28,617 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:54:28,618 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:54:28,619 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:54:28,620 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:54:29,881 [Worker-30: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:54:29,882 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:54:29,886 [Worker-30: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:54:29,887 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 01:56:40,708 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:56:40,709 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 01:56:40,710 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 01:56:40,710 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:00:46,965 [Worker-34: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:01:34,750 [Worker-37: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:02:17,963 [Worker-35: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:03:22,320 [Worker-34: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:03:22,325 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for junit:junit:jar:5.9.1 is missing, no dependency information available
+2022-11-05 02:03:22,351 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:22,352 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:22,354 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:22,354 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:23,494 [Worker-37: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/easymock/easymock/5.0.1/easymock-5.0.1-sources.jar
+2022-11-05 02:03:23,658 [Worker-37: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/easymock/easymock/5.0.1/easymock-5.0.1-sources.jar
+2022-11-05 02:03:23,660 [Worker-37: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.easymock:easymock:5.0.1
+2022-11-05 02:03:23,723 [Worker-37: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3-sources.jar
+2022-11-05 02:03:23,754 [Worker-37: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3-sources.jar
+2022-11-05 02:03:23,755 [Worker-37: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.objenesis:objenesis:3.3
+2022-11-05 02:03:23,818 [Worker-37: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/5.9.1/junit-5.9.1-sources.jar
+2022-11-05 02:03:23,819 [Worker-37: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for junit:junit:5.9.1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact junit:junit:jar:sources:5.9.1
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-11-05 02:03:24,638 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:24,640 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:24,643 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:24,645 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:35,152 [Worker-34: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:03:35,155 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for junit:junit:jar:5.9.1 is missing, no dependency information available
+2022-11-05 02:03:35,179 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:35,180 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:35,182 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:35,182 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:36,284 [Worker-1: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/5.9.1/junit-5.9.1-javadoc.jar
+2022-11-05 02:03:36,286 [Worker-1: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for junit:junit:5.9.1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact junit:junit:jar:javadoc:5.9.1
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:294) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-11-05 02:03:50,998 [Worker-35: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:03:51,025 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:51,026 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:51,028 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:51,028 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:52,091 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1-sources.jar
+2022-11-05 02:03:52,144 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1-sources.jar
+2022-11-05 02:03:52,145 [Worker-35: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.jupiter:junit-jupiter-api:5.9.1
+2022-11-05 02:03:52,217 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0-sources.jar
+2022-11-05 02:03:52,245 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0-sources.jar
+2022-11-05 02:03:52,245 [Worker-35: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.opentest4j:opentest4j:1.2.0
+2022-11-05 02:03:52,256 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:52,257 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:03:52,260 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:52,261 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:52,309 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1-sources.jar
+2022-11-05 02:03:52,348 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1-sources.jar
+2022-11-05 02:03:52,350 [Worker-35: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.platform:junit-platform-commons:1.9.1
+2022-11-05 02:03:52,426 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2-sources.jar
+2022-11-05 02:03:52,456 [Worker-35: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2-sources.jar
+2022-11-05 02:03:52,458 [Worker-35: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apiguardian:apiguardian-api:1.1.2
+2022-11-05 02:03:53,333 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:53,335 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:03:53,339 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:03:53,341 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:05:18,842 [Worker-34: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:05:18,846 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/snapshots during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-snapshots (https://nexus.chronicle.software/content/repositories/snapshots): Access denied to https://nexus.chronicle.software/content/repositories/snapshots/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 02:05:18,851 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://nexus.chronicle.software/content/repositories/releases during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of chronicle-enterprise-release has elapsed or updates are forced. Original error: Could not transfer metadata net.openhft:third-party-bom:3.22.4-SNAPSHOT/maven-metadata.xml from/to chronicle-enterprise-release (https://nexus.chronicle.software/content/repositories/releases): Access denied to https://nexus.chronicle.software/content/repositories/releases/net/openhft/third-party-bom/3.22.4-SNAPSHOT/maven-metadata.xml. Error code 401, 
+2022-11-05 02:05:18,898 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:05:18,900 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:05:18,901 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:05:18,902 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:05:20,073 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:05:20,074 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:05:20,078 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:05:20,079 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:11:47,564 [Worker-1: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.lptl:BattleGrounds:0.0.1-SNAPSHOT @ /media/dezl/SSD SDiskU 1TB/Programming/BattleGrounds/BattleGrounds/pom.xml.
+2022-11-05 02:11:47,594 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:11:47,609 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:11:47,610 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:11:47,611 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:11:48,852 [Worker-1: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/ch/obermuhlner/java-scriptengine/1.0.1/java-scriptengine-1.0.1-sources.jar
+2022-11-05 02:11:48,853 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:11:48,854 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:11:48,858 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:11:48,859 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:11:48,967 [Worker-1: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/ch/obermuhlner/java-scriptengine/1.0.1/java-scriptengine-1.0.1-sources.jar
+2022-11-05 02:11:48,968 [Worker-1: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for ch.obermuhlner:java-scriptengine:1.0.1
+2022-11-05 02:11:49,921 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:11:49,922 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:11:49,923 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:11:49,924 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:13:10,101 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:13:10,101 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:13:10,102 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:13:10,103 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:13:30,193 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:13:30,194 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:13:30,195 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:13:30,196 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:17:51,591 [Worker-41: Launching InterpreterMain] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:17:51,592 [Worker-41: Launching InterpreterMain] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:17:51,593 [Worker-41: Launching InterpreterMain] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:17:51,594 [Worker-41: Launching InterpreterMain] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:18:29,940 [Worker-46: Launching InterpreterMain] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:18:29,941 [Worker-46: Launching InterpreterMain] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:18:29,942 [Worker-46: Launching InterpreterMain] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:18:29,943 [Worker-46: Launching InterpreterMain] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:18:59,395 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:18:59,396 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:18:59,397 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:18:59,398 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:19:43,363 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:19:43,364 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:19:43,365 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:19:43,365 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:19:45,595 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:19:45,596 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:19:45,597 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:19:45,597 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:22:37,050 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:22:37,051 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:22:37,052 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:22:37,053 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:23:05,552 [Worker-51: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:23:05,553 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:23:05,554 [Worker-51: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:23:05,555 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:23:16,919 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:23:16,920 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:23:16,921 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:23:16,921 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:24:27,319 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:24:27,320 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:24:27,321 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:24:27,321 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:24:35,319 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:24:35,320 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:24:35,321 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:24:35,321 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-05 02:24:37,071 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:24:37,072 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-05 02:24:37,073 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-05 02:24:37,074 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
