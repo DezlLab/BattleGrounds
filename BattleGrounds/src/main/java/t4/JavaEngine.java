@@ -10,8 +10,8 @@ import javax.script.ScriptException;
 import ch.obermuhlner.scriptengine.java.JavaScriptEngine;
 import ch.obermuhlner.scriptengine.java.execution.MethodExecutionStrategy;
 
+
 public class JavaEngine {
-	
 	private ScriptEngine jEngine;
 	private Compilable compiler;
 	
@@ -75,7 +75,8 @@ public class JavaEngine {
 			//Also the entryMethod is not allowed to have args (they are removed)
 			this.sourceCode = this.sourceCode.replace("public static void main(String[] args)", "public static void main()");
 			this.sourceCode = this.sourceCode.substring(0, index) + "public static String[] args; " + this.sourceCode.substring(index);
-			bindings.put("args", new String[] {"null\n"});
+			System.err.println(sourceCode);
+			bindings.put("args", args);
 			return true;
 		}
 		return false;
@@ -97,3 +98,5 @@ public class JavaEngine {
 		this.debug = debug;
 	}
 }
+
+

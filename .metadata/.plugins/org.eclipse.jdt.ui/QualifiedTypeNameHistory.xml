@@ -2,14 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="net.openhft.compiler.CompilerUtils"/>
     <fullyQualifiedTypeName name="javax.script.ScriptEngineManager"/>
-    <fullyQualifiedTypeName name="javax.script.ScriptEngine"/>
     <fullyQualifiedTypeName name="javax.script.ScriptException"/>
     <fullyQualifiedTypeName name="ch.obermuhlner.scriptengine.java.JavaScriptEngine"/>
     <fullyQualifiedTypeName name="ch.obermuhlner.scriptengine.java.constructor.DefaultConstructorStrategy"/>
     <fullyQualifiedTypeName name="ch.obermuhlner.scriptengine.java.execution.MethodExecutionStrategy"/>
-    <fullyQualifiedTypeName name="javax.script.Bindings"/>
-    <fullyQualifiedTypeName name="javax.script.Compilable"/>
-    <fullyQualifiedTypeName name="javax.script.CompiledScript"/>
     <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="util.Utils"/>
@@ -17,4 +13,11 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.nio.charset.StandardCharsets"/>
+    <fullyQualifiedTypeName name="javax.script.ScriptEngine"/>
+    <fullyQualifiedTypeName name="javax.script.Compilable"/>
+    <fullyQualifiedTypeName name="javax.script.CompiledScript"/>
+    <fullyQualifiedTypeName name="javax.script.Bindings"/>
+    <fullyQualifiedTypeName name="t4.JavaEngine"/>
+    <fullyQualifiedTypeName name="java.io.PrintStream"/>
+    <fullyQualifiedTypeName name="t1.Vector2D"/>
 </qualifiedTypeNameHistroy>

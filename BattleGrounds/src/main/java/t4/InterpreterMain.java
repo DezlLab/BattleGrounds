@@ -27,15 +27,14 @@ public class InterpreterMain {
 		    jsEngine.setExecutionStrategyFactory((clazz) -> {
 		        return MethodExecutionStrategy.byMatchingArguments(
 		                clazz,
-		                "main",
-		                "test, make");
+		                "main");
 		    });
 		    
 		    Compilable compiler = (Compilable) engine;
 		    CompiledScript compiledScript = compiler.compile(""
 		    		+"public class Script {"
 		    		+ "public static String[] args;"
-		            + "public static void main(String _args){" //TODO https://github.com/eobermuhlner/java-scriptengine#set-executionstrategyfactory-in-javascriptengine
+		            + "public static void main(){" //TODO https://github.com/eobermuhlner/java-scriptengine#set-executionstrategyfactory-in-javascriptengine
 		    		//+ "String[] args = _args.split(\",\");"
 		            + "	int a = 39;"							//for main to work by 
 		            + "	int b = 3;"

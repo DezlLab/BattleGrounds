@@ -2,23 +2,19 @@ package t5;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.json.JSONObject;
 
+import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 
 import t4.JavaEngine;
 import util.Utils;
-
-import com.sun.net.httpserver.HttpExchange;
 
 
 
@@ -33,7 +29,7 @@ public class GUIServer {
 	private JavaEngine jEngine;
 	private ByteArrayOutputStream sysBuffer;
 	
-	public GUIServer(int port, JavaEngine jEngine) { 
+	public GUIServer(int port, JavaEngine jEngine) {
 		this(port);
 		this.jEngine = jEngine;
 		sysBuffer = new ByteArrayOutputStream();
@@ -106,7 +102,7 @@ public class GUIServer {
 		if(requestURI.indexOf("java") != -1) {
 			String sourceCode = Utils.inputStreamToString(httpExchange.getRequestBody());
 			jEngine.setSourceCode(sourceCode);
-			jEngine.run();
+			jEngine.run(new String[] {"Conny", "LOL"});
 			response = sysBuffer.toString(StandardCharsets.UTF_8);
 			sysBuffer.reset();
 			//System.out.println(":::"+response);

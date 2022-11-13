@@ -1,8 +1,5 @@
 package t1;
 
-import java.lang.constant.Constable;
-import java.lang.constant.ConstantDesc;
-
 public class Vector2D{
 	
 	private float x;
