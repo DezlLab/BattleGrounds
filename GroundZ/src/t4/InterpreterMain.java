@@ -17,6 +17,12 @@ public class InterpreterMain {
 	}
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+		
+		JavaEngine jE = new JavaEngine();
+		//jE.run();
+		String str = "			   lol			   ";
+		System.out.println(str.replaceAll("[\\s\\t]+", "="));
+		
 		//test of https://github.com/eobermuhlner/java-scriptengine
 		try {
 		    ScriptEngineManager manager = new ScriptEngineManager();

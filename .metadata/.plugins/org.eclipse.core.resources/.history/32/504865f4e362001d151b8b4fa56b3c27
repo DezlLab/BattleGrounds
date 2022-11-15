@@ -1,0 +1,11 @@
+package t1;
+
+public abstract class Vector {
+	
+	
+	public abstract Vector zero();
+	public abstract Vector up();
+	public abstract Vector down();
+	public abstract Vector left();
+	public abstract Vector right();
+}

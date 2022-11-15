@@ -1,0 +1,7 @@
+package t1;
+
+import java.util.List;
+
+public abstract class MathObject {
+	protected List<MathObject> defaults;
+}

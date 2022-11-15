@@ -1,0 +1,31 @@
+package t1;
+
+public class Vectro2DConst {
+	private static Vectro2DConst zero = new Vector2Df(0f, 0f);
+	private static Vectro2DConst up = new Vector2Df(0f, 1f);
+	private static Vectro2DConst down = new Vector2Df(0f, -1f);
+	private static Vectro2DConst left = new Vector2Df(-1f, 0f);
+	private static Vectro2DConst right = new Vector2Df(1f, 0f);
+	
+	public static Vectro2DConst zero() {
+		return zero;
+	}
+	
+	public static Vectro2DConst up() {
+		return up;
+	}
+	
+	public static Vectro2DConst down() {
+		return down;
+	}
+	
+	public static Vectro2DConst left() {
+		return left;
+	}
+	
+	public static Vectro2DConst right () {
+		return right;
+	}
+	
+	
+}

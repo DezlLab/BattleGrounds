@@ -1,0 +1,14 @@
+package t1;
+
+public class T1Test {
+	
+	public static void main(String[] args) {
+		Vector2Di v = new Vector2Di();
+		Vector2Di a = new Vector2Di(0f, 0f);
+		System.out.println("== : "+v+a);
+		
+		a.setXLimit((f) -> {return (f >= 1) ? f : 1;});
+		v.setX(1);
+		System.out.println("== : "+v+a);
+	}
+}

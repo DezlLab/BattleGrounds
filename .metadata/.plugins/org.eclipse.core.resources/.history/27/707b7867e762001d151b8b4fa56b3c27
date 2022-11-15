@@ -1,0 +1,30 @@
+package t1;
+
+public abstract class Vector {
+	
+	private static VectorConst zero = new VectorConst(null);
+	private static VectorConst up = new VectorConst(null);
+	private static VectorConst down = new VectorConst(null);
+	private static VectorConst left = new VectorConst(null);
+	private static VectorConst right = new VectorConst(null);
+	
+	public static Vector zero() {
+		return zero;
+	}
+	
+	public static Vector up() {
+		return up;
+	}
+	
+	public static Vector down() {
+		return down;
+	}
+	
+	public static Vector left() {
+		return left;
+	}
+	
+	public static Vector right () {
+		return right;
+	}
+}

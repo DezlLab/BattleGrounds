@@ -1,0 +1,9 @@
+package t1;
+
+public class VectorConst extends Vector{
+	private Vector vec;
+	
+	public VectorConst(Vector vec) {
+		this.vec = vec;
+	}
+}

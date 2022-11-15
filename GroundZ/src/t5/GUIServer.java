@@ -37,7 +37,7 @@ public class GUIServer {
 		this.clientSystem = jEngine.getClientSystem();
 		System.out.println("::Run");
 		
-		jEngine.run();
+		jEngine.run(new String[]{"lol"});
 	}
 	
 	public GUIServer(int port) { 
@@ -107,7 +107,7 @@ public class GUIServer {
 		if(requestURI.indexOf("java.") != -1) {
 			String sourceCode = Utils.inputStreamToString(httpExchange.getRequestBody());
 			jEngine.setSourceCode(sourceCode);
-			//jEngine.run(new String[] {"Conny", "LOL"});
+			jEngine.run(new String[] {"Conny", "LOL"});
 			//response = sysBuffer.toString();
 			//System.out.println(":::"+response);
 			//System.err.println(response);

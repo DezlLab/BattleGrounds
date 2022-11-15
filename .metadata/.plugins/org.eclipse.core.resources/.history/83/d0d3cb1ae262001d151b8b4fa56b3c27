@@ -1,0 +1,5 @@
+package t1;
+
+public abstract class MathObject {
+	protected Array<MathObject> defaults;
+}

@@ -33,18 +33,13 @@ public class JavaEngine {
 		this.jEngine = new ScriptEngineManager().getEngineByName("java");
 		this.compiler = (Compilable) jEngine;
 		this.sourceCode = "public class Main{\n"
-				+ "	public static void main (String[] args) {\n"
-				+ "		System.out.print(\"Hello\"+args[0]);\n"
+				+ "    public static void main(String[] args) {\n"
+				+ "    System.out.print(\"Hello\"+\"args[0]\");\n"
 				+ " }\n"
 				+ "}\n";
 		this.bindings = jEngine.createBindings();
 		
 		this.setEntryMethod("main");
-	}
-	
-	public JavaEngine(boolean debug, String sourceCode) {
-		this(debug);
-		this.setSourceCode(sourceCode);
 	}
 	
 	public ClientSystem getClientSystem() {
@@ -62,15 +57,9 @@ public class JavaEngine {
 	public void run() { run(new String[] {""});}
 	
 	public void run(String[] args) {
-		//boolean isMain = setArgs(args);
-		//formatWhiteSpace();
-		System.out.println(":::"+this.sourceCode);
-		//public static void main[ ]?\\(\\)
-		boolean isMain = changeCode("^[ \\t]+public static void main\\(String\\[\\] args\\) {", "public static void main() { String[] args;", "args", args);
-		
-		changeCode("System.out.print", "clientSystem.print");
-		
+		setArgs(args);
 		try {
+			System.out.println(sourceCode);
 			this.compiledScript = compiler.compile(sourceCode);
 			
 			Object result = compiledScript.eval(bindings);
@@ -87,37 +76,18 @@ public class JavaEngine {
 		int index = this.sourceCode.indexOf("public static void main(String[] args)");
 		if (index != -1) {
 			//Also the entryMethod is not allowed to have args (they are removed)
-			this.sourceCode = this.sourceCode.replace("public static void main(String[] args)", "public static void main()");
-			this.sourceCode = this.sourceCode.substring(0, index) + "public static String[] args; " + this.sourceCode.substring(index);
+			System.out.println("==>"+sourceCode);
+			this.sourceCode = this.sourceCode.replace("public static void main(String[] args)", "public static String[] args; public static void main()");
+			//this.sourceCode = this.sourceCode.substring(0, index) + "public static String[] args; " + this.sourceCode.substring(index);
 			System.err.println(sourceCode);
-			bindings.put("args", args);
+			//bindings.put("args", args);
 			return true;
 		}
 		return false;
 	}
 	
-	private void formatWhiteSpace() {
-		//To get String[] args working a line is added as global var and then set with put
-		this.sourceCode.replaceAll("  ", " ");//Only allow one white space
-	}
-	
-	private boolean changeCode(String target, String replacement) { return changeCode(target, replacement, null, null);}
-	
-	private boolean changeCode(String target, String replacement, String paramName, Object param) {
-		System.out.println(this.sourceCode.matches(sourceCode));
-		if (this.sourceCode.matches(sourceCode)) {
-			//change Code set target to replacement and add the param;
-			//this.sourceCode = this.sourceCode.replace(target, replacement);
-			this.sourceCode = this.sourceCode.replaceAll(target, replacement);
-			
-			System.out.println(">>"+this.sourceCode);
-			
-			if (paramName != null || paramName != "") {
-				bindings.put(paramName, param);
-			}
-			return true;
-		}
-		return false;
+	public void addBinding(String paramName, Object param) {
+		bindings.put(paramName, param);
 	}
 	
 	public String getSourceCode() {
@@ -136,5 +106,3 @@ public class JavaEngine {
 		this.debug = debug;
 	}
 }
-
-
