@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
@@ -22,6 +23,7 @@ import util.Utils;
 public class GUIServer {
 	private HttpServer server;
 	private String resourcesPath;
+	private String configFileName;
 	private HashMap<String, String> responses;
 	private ClientSystem clientSystem;
 	
@@ -30,35 +32,31 @@ public class GUIServer {
 	//TODO only test Constructor
 	private JavaEngine jEngine;
 	
-	public GUIServer(int port, JavaEngine jEngine) {
-		this(port);
-		this.jEngine = jEngine;
-		
-		this.clientSystem = jEngine.getClientSystem();
-		System.out.println("::Run");
-		
-		jEngine.run(new String[]{"lol"});
-	}
-	
 	public GUIServer(int port) { 
 		this.resourcesPath = "resources";
 		this.responses = new HashMap<String, String>();
 		
-		loadResponses();
-		
 		try {
 			server = HttpServer.create(new InetSocketAddress(port), 0);
-			
 			server.createContext("/", httpExchange -> requestHandler(httpExchange));
 			server.start();
+			System.out.println("Run at : http://127.0.1.1:"+port);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public GUIServer(int port, String configPath) {
+	public GUIServer(int port, String configPath, JavaEngine jEngine) {
 		this(port);
-		this.resourcesPath = configPath;
+		this.jEngine = jEngine;
+		this.clientSystem = jEngine.getClientSystem();
+		
+		int index = configPath.lastIndexOf('/');
+		if(index >= 0) {
+			this.resourcesPath = configPath.substring(0, index);
+			this.configFileName = configPath.substring(index);
+		}
+		loadResponses();
 	}
 	
 	private void loadResponses() {
