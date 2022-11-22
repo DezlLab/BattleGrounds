@@ -10,6 +10,7 @@ public class ConsoleMain {
 		Player player = new Player(new Vector2Df(1.0f,1.0f),grid);
 		System.out.println(player);
 		player.move("left");
+		player.down();
 		System.out.println(player);
 
 		

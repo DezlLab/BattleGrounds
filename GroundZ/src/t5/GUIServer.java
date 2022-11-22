@@ -57,6 +57,7 @@ public class GUIServer {
 			this.configFileName = configPath.substring(index);
 		}
 		loadResponses();
+		System.out.println(this.responses.keySet());
 	}
 	
 	private void loadResponses() {
@@ -64,7 +65,7 @@ public class GUIServer {
 		JSONObject config = Utils.loadJSON(resourcesPath + "/config.json");
 		if(config == null) {
 			//Setup in case of no config
-			responses.put("/", "<h1>GUI Server v0.6</h1><p>Project by Luca P. and Theo L.</p><p style=\"color:#fff; background:#f00; padding:10px; border-radius:10px;\"> No config was found</p>");
+			responses.put("/", "<h1>GUI Server v0.96</h1><p>Project by Luca P. and Theo L.</p><p style=\"color:#fff; background:#f00; padding:10px; border-radius:10px;\"> No config was found </p>");
 			responses.put("default", "<h3>404 ERROR</h3><p>Project by Luca P. and Theo L.</p><p style=\"color:#fff; background:#f00; padding:10px; border-radius:10px;\"> No config was found</p>");
 			System.err.println("loadResponses :: ERROR at : no config");
 		}
@@ -111,10 +112,16 @@ public class GUIServer {
 			//response = "lol";
 			response = clientSystem.stripString();
 		}
-		System.err.println(":::"+requestURI);
+		String textType = "html";
+		int index = requestURI.indexOf('.');
+		if(index != -1) {
+			textType = requestURI.substring(index + 1);
+		}
+		
+		System.err.println(":::"+requestURI+"; >"+textType);
 		System.err.println(Utils.inputStreamToString(httpExchange.getRequestBody()));
 		
-		httpExchange.getResponseHeaders().add("Content-Type", "text/html; charset=UTF-8");
+		httpExchange.getResponseHeaders().add("Content-Type", "text/"+textType+"; charset=UTF-8");
 	    httpExchange.sendResponseHeaders(200, response.length());
 
 	    OutputStream out = httpExchange.getResponseBody();

@@ -1,5 +1,7 @@
 {
 	"default" : "error404.html",
     "/" : "index.html",
-    "/console" : "console.html"
+    "/console" : "console.html",
+    "/main.js" : "main.js",
+    "/style.css": "style.css"
 }
