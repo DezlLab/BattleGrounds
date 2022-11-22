@@ -57,6 +57,10 @@ public class Player
 		
 	}
 	
+	public void left() { position.add(Vector.left());}
+	public void right(){ position.add(Vector.right());}
+	public void up()   { position.add(Vector.up());}
+	public void down() { position.add(Vector.down());}
 	
 	public int positionToList()
 	{

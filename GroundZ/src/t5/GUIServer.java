@@ -108,7 +108,6 @@ public class GUIServer {
 			jEngine.run(new String[] {"Conny", "LOL"});
 			//response = sysBuffer.toString();
 			//System.out.println(":::"+response);
-			//System.err.println(response);
 			//response = "lol";
 			response = clientSystem.stripString();
 		}
