@@ -7,7 +7,7 @@ public class Grid
 {
 	private int height;
 	private int width;
-	private ArrayList<String> objects;
+	private ArrayList<GameObject> objects;
 	
 	
 	
@@ -53,20 +53,20 @@ public class Grid
 		
 		this.height = height;
 		this.width = width;
-		objects = new ArrayList<String>();
+		objects = new ArrayList<GameObject>();
 		newRandomGrid();
 	}
 
 
 
-	public ArrayList<String> getObjects() 
+	public ArrayList<GameObject> getObjects() 
 	{
 		return objects;
 	}
 
 
 
-	public void setObjects(ArrayList<String> objects) 
+	public void setObjects(ArrayList<GameObject> objects) 
 	{
 		this.objects = objects;
 	}
@@ -74,13 +74,48 @@ public class Grid
 	
 	public void newRandomGrid()
 	{
+		//int random = 3;//(int) (Math.random()*height*width);
 		for (int i= 0; i<height*width;i++) 
 		{
-			objects.add( ".");
+			if ((int) (Math.random()*100 )== 3)
+				objects.add( new Tunel(true) );
+			else if ((int) (Math.random()*100 )== 3)
+				objects.add( new Tunel(false) );
+			else if ((int) (Math.random()*50 )== 3)
+				objects.add( new Coin() );
+			 
+			else
+				objects.add( new NormalStone() );
+		}
+		addBarrier();
+	}
+	
+	
+	public void addBarrier()
+	{
+		height +=2;
+		width += 2;
+		for (int i= 0; i<width;i++) 
+		{
 			
+			objects.add(i, new BarrierBlock() );
 		}
 		
+		for (int i= width; i<height*width -width;i++) 
+		{
+			
+			objects.add(i, new BarrierBlock() );
+			i+= width-1;
+			objects.add(i, new BarrierBlock() );
+		}
+		
+		for (int i= height*width -width; i<height*width;i++) 
+		{
+			
+			objects.add(i, new BarrierBlock() );
+		}
 	}
+	
 	public String randomObject()
 	{
 		
@@ -93,7 +128,7 @@ public class Grid
 	public String toString() {
 		String gridTranslation = "\n\n\n    ";
 		int rowCount = 0;
-		for (String i : objects) 
+		for (GameObject i : objects) 
 		{
 			
 			if (rowCount < width)
