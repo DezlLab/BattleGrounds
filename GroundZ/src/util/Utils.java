@@ -16,14 +16,14 @@ public class Utils {
 		
 		JSONObject result = null;
 		try {
-			result = new JSONObject(readFile(path, StandardCharsets.UTF_8));
+			result = new JSONObject(new String(readFile(path)));
 		}catch (JSONException err){
 			System.err.println("loadJSON :: ERROR");
 		}
 		return result;
 	}
 	
-	public static String readFile(String path, Charset encoding){
+	public static byte[] readFile(String path){
 		byte[] encoded = null;
 		try {
 			encoded = Files.readAllBytes(Paths.get(path));
@@ -32,7 +32,7 @@ public class Utils {
 			e.printStackTrace();
 			return null;
 		}
-		return new String(encoded, encoding);
+		return encoded;
 	}
 	
 	public static String inputStreamToString(InputStream inputStream) throws IOException {

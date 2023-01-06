@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-16">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href="https://icons.iconarchive.com/icons/uiconstock/e-commerce/256/e-commerce-icon-icon.png"> -->
+    <!-- <link rel="icon" href="data:;base64,=">-->
+    <link rel="icon" type="image/x-icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script> 
     <title>BattleGrounds</title>
 </head>
-<body>
-    <h1>BattleGrounds v0.9A</h1>
-    <pre contentEditable="true" style="width: 653px; height: 393px;" id = "codeArea"><div style="color: #5af">Test&ltT&gt</div></pre>
-    <button style = "display:block;"onclick="fetch('java.run', {
-        method : 'POST',
-        body : document.getElementById('codeArea').value
-    }).then((response) => response.text()).then((text) => {
-        document.getElementById('outputArea').value += '\nOutput:' + text;
-        //document.getElementById('outputArea').scrollTop = document.getElementById('outputArea').scrollHeight;
-    })">Run</button><!-- -->
+<body onload="setup()">
+    <h1>BattleGrounds v0.98A</h1>
+    <textarea style="width: 653px; height: 393px;" id = "codeArea">
+    class InHtmlTest{
+        public static void main(String[] args){
+            String[] lines = {
+                "Hi vom Server",
+                "wie geht es euch"
+                };
+                for(String line : lines){
+                    System.out.print(line + "\n");
+                }
+        }
+    }
+    </textarea>
+    <button style = "display:inline-block;" onclick="onRun()">Run</button>
+    <button style = "display:inline-block;" onclick="onClr()">Clear</button>
     <textarea readonly style="resize: none; width: 652px; height: 113px;" id = "outputArea">Output:</textarea>
 </body>
 </html>

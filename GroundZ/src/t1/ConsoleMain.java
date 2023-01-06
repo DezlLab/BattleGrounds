@@ -12,7 +12,6 @@ public class ConsoleMain {
 		player.move("left");
 		player.down();
 		System.out.println(player);
-
 		
 	}
 
