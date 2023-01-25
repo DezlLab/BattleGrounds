@@ -12,6 +12,29 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Utils {
+	
+	private final static boolean DEBUG = true;
+	private final static boolean LOGERR = true;
+	private final static boolean DISPLAY = true;
+	
+	public static void debug(String str) {
+		if(DEBUG) {
+			System.out.println(str);
+		}
+	}
+	
+	public static void logErr(String str) {
+		if(LOGERR) {
+			System.err.println(str);
+		}
+	}
+	
+	public static void display(String str) {
+		if(DISPLAY) {
+			System.out.println(str);
+		}
+	}
+	
 	public static JSONObject loadJSON(String path) {
 		
 		JSONObject result = null;

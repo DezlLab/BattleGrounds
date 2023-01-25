@@ -2,10 +2,10 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "0.98B"
+let appVersion = "0.98C"
 
 function setup(){
-    //clear()
+    document.getElementById("debugHeader").innerHTML += appVersion
 }
 
 //OnClicks

@@ -10,6 +10,7 @@ import javax.script.ScriptException;
 import ch.obermuhlner.scriptengine.java.JavaScriptEngine;
 import ch.obermuhlner.scriptengine.java.execution.MethodExecutionStrategy;
 import t5.ClientSystem;
+import t5.ServerPacket;
 
 
 public class JavaEngine {
@@ -52,6 +53,10 @@ public class JavaEngine {
 	                clazz,
 	                name);
 	    });
+	}
+	
+	public void run(ServerPacket packet) {
+		packet.sendResponse("java.run TODO".getBytes());
 	}
 	
 	public void run() { run(new String[] {""});}
