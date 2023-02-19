@@ -13,7 +13,6 @@ public class PacketInfo {
 	private String resourceType;
 	
 	public PacketInfo(String path) {
-		System.err.println(path);
 		isResource = true;
 		int index = path.indexOf(".");
 		resourceType = "text";

@@ -1,5 +1,10 @@
 package t4;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.nio.ByteBuffer;
+
 import javax.script.Bindings;
 import javax.script.Compilable;
 import javax.script.CompiledScript;
@@ -11,6 +16,7 @@ import ch.obermuhlner.scriptengine.java.JavaScriptEngine;
 import ch.obermuhlner.scriptengine.java.execution.MethodExecutionStrategy;
 import t5.ClientSystem;
 import t5.ServerPacket;
+import util.Utils;
 
 
 public class JavaEngine {
@@ -23,6 +29,8 @@ public class JavaEngine {
 	
 	private ClientSystem clientSystem;
 	
+	private OutputStream oBuff;
+	
 	private boolean debug;
 	
 	public JavaEngine() {
@@ -30,16 +38,17 @@ public class JavaEngine {
 	}
 	
 	public JavaEngine(boolean debug) {
+		System.setOut((PrintStream) oBuff);
 		this.debug = debug;
 		this.jEngine = new ScriptEngineManager().getEngineByName("java");
 		this.compiler = (Compilable) jEngine;
 		this.sourceCode = "public class Main{\n"
-				+ "    public static void main(String[] args) {\n"
-				+ "    System.out.print(\"Hello\"+\"args[0]\");\n"
+				+ "    public static void main() {\n"
+				+ "    System.out.println(\"ASUS\");\n"
 				+ " }\n"
 				+ "}\n";
 		this.bindings = jEngine.createBindings();
-		
+		this.run();
 		this.setEntryMethod("main");
 	}
 	
@@ -56,19 +65,35 @@ public class JavaEngine {
 	}
 	
 	public void run(ServerPacket packet) {
-		packet.sendResponse("java.run TODO".getBytes());
+		//TODO add args settings / console support
+		this.sourceCode = Utils.inputStreamToString(packet.getHttpExchange().getRequestBody());
+		//clientSystem.print("mogu");
+		//this.bindings.put("clientSystem", "mogu");
+		//clientSystem.print("sus");
+		run();
+		//packet.sendResponse("Se fuck".getBytes());
+		
+		byte[] b = new byte[1024];
+		try {
+			oBuff.write(b);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		packet.sendResponse(b);
 	}
 	
 	public void run() { run(new String[] {""});}
 	
 	public void run(String[] args) {
-		setArgs(args);
+		//setArgs(args);
 		try {
-			System.out.println(sourceCode);
+			//System.out.println(sourceCode);
 			this.compiledScript = compiler.compile(sourceCode);
 			
 			Object result = compiledScript.eval(bindings);
-			//System.out.println("Result: " + result);
+			//clientSystem.println("After proper Interpreter this should give the outputs of code, from Client:]");
+			System.out.println("Result: " + result);
 		} catch (ScriptException e) {
 			System.out.println("run :: ERROR");
 			e.printStackTrace();

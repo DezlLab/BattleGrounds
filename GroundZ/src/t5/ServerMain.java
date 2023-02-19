@@ -5,8 +5,8 @@ import java.io.IOException;
 import t4.JavaEngine;
 
 public class ServerMain {
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
-		JavaEngine jEngine = new JavaEngine();
+	public static void main(String[] args){
+		JavaEngine jEngine = null;//new JavaEngine();
 		
 		GUIServer gui = new GUIServer(8989, "resources/config.json", jEngine);
 		//JSONObject o = Utils.loadJSON();

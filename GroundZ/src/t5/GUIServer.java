@@ -57,12 +57,19 @@ public class GUIServer {
 	
 	private void requestHandler(HttpExchange httpExchange) {
 		ServerPacket packet = new ServerPacket(httpExchange);
+		try {
+			Thread.sleep(0);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if(packet.isResource()) {
-			Utils.debug("log");
 			packet.sendResponse(packet.getBytes());
 		}
 		else {
-			jEngine.run(packet);
+			System.out.println("jError");
+			//jEngine.run(packet);
+			//packet.sendResponse("The http is sus".getBytes());
 		}
 	}
 }

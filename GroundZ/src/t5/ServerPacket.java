@@ -22,7 +22,7 @@ public class ServerPacket
 //	private String resourceType;
 //	private boolean isResource;
 	private File file;
-	private int statusFlag = 404;
+	private int statusFlag = 201;
 
 	static public void setResourcesPath(String path) {
 		resourcesPath = path;
@@ -67,6 +67,10 @@ public class ServerPacket
         return bytes;
 	}
 	
+	public HttpExchange getHttpExchange() {
+		return this.httpExchange;
+	}
+	
 	public int getStatusFlag() {
 		return statusFlag;
 	}
@@ -76,20 +80,24 @@ public class ServerPacket
 		{
 			path = "/index.html";
 		}
-		File file = new File(resourcesPath+path);
-		if(!file.canRead())
+		if(path.indexOf(".") == -1)
 		{
-			file = loadFallback();
+			path += ".html";
 		}
+		File file = new File(resourcesPath+path);
 		if(file.canRead())
 		{
 			this.statusFlag = 200;
+		}
+		else
+		{
+			file = loadFallback();
 		}
 		return file;
 	}
 	
 	public File loadFallback() {
-		File file = new File(resourcesPath+"error404.html");
+		File file = new File(resourcesPath+"/error404.html");
 		return file;
 	}
 

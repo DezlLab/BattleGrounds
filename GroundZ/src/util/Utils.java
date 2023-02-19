@@ -58,14 +58,18 @@ public class Utils {
 		return encoded;
 	}
 	
-	public static String inputStreamToString(InputStream inputStream) throws IOException {
+	public static String inputStreamToString(InputStream inputStream) {
 		//Source https://stackoverflow.com/questions/309424/how-do-i-read-convert-an-inputstream-into-a-string-in-java
 	ByteArrayOutputStream result = new ByteArrayOutputStream();
-	byte[] buffer = new byte[1024];
-	for (int length; (length = inputStream.read(buffer)) != -1; ) {
-	    result.write(buffer, 0, length);
+	byte[] buffer = new byte[1024];//TODO dynamic
+	try {
+		for (int length; (length = inputStream.read(buffer)) != -1; ) {
+		    result.write(buffer, 0, length);
+		}
+		return result.toString("UTF-8");
+	} catch (IOException e) {
+		e.printStackTrace();
 	}
-	// StandardCharsets.UTF_8.name() > JDK 7
-	return result.toString("UTF-8");
+	return "inputStreamToString READ Error";
 	}
 }
