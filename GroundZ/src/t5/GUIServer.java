@@ -1,33 +1,19 @@
 package t5;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.InetSocketAddress;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.util.Base64;
-import java.util.HashMap;
-
-import org.json.JSONObject;
 
 import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import t4.JavaEngine;
+import t4.CodeRunner;
 import util.Utils;
 
 
 
 public class GUIServer {
 	private HttpServer server;
-	private JavaEngine jEngine;
+	private CodeRunner jEngine;
 	
 	public GUIServer() { this(8080);}
 	
@@ -45,7 +31,7 @@ public class GUIServer {
 		}
 	}
 	
-	public GUIServer(int port, String configPath, JavaEngine jEngine) {
+	public GUIServer(int port, String configPath, CodeRunner jEngine) {
 		this(port);
 		this.jEngine = jEngine;
 		
@@ -67,8 +53,8 @@ public class GUIServer {
 			packet.sendResponse(packet.getBytes());
 		}
 		else {
-			System.out.println("jError");
-			//jEngine.run(packet);
+			Utils.debug("Hi java");
+			jEngine.handel(packet);
 			//packet.sendResponse("The http is sus".getBytes());
 		}
 	}

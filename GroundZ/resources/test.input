@@ -1,12 +1,15 @@
-public class Main{
+import t5.ClientSystem;
 
-  public static void main(String[] args){
-  	String[] lines = {
-  	"Hi William das ist unser Server",
-  	"& Compiler (aus dem Internet geklaut)"
-  	};
-  	for(String line : lines){
-  		System.out.print(line + "\n");
-  	}
-  }
+public class Script {
+	public static String[] args;
+	public static ClientSystem clientSystem;
+	public int counter = 1;
+	public void getMessage() {
+		clientSystem.print("Wow so cool");
+		try {
+			Thread.sleep(0);
+		} catch (InterruptedException e) {
+		}
+		System.out.println("Hi from here "+args[0]);
+	}
 }

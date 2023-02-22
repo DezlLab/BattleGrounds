@@ -4,6 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 
@@ -22,7 +23,7 @@ public class ServerPacket
 //	private String resourceType;
 //	private boolean isResource;
 	private File file;
-	private int statusFlag = 201;
+	private int statusFlag = 200;
 
 	static public void setResourcesPath(String path) {
 		resourcesPath = path;
@@ -36,8 +37,10 @@ public class ServerPacket
 		this.httpExchange = httpExchange;
 		String requestURI = httpExchange.getRequestURI().toASCIIString();
 		packetInfo = new PacketInfo(requestURI);
-		file = load(requestURI);
-		Utils.debug("Load : "+requestURI);
+		if(packetInfo.isResource()) {
+			file = load(requestURI);
+			Utils.debug("Load : "+requestURI);
+		}
 	}
 	
 	public void sendResponse(byte[] bytes) {
@@ -55,10 +58,19 @@ public class ServerPacket
 	}
 	
 	public byte[] getBytes() {
-		byte[] bytes  = new byte [(int)file.length()];
+		
+		InputStream inputStream;
+		byte[] bytes = null;
         try {
-        	FileInputStream fileInputStream = new FileInputStream(file);
-        	BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+        	if(isResource()) {
+        		inputStream = new FileInputStream(file);
+        		bytes = new byte [(int)file.length()];
+        	}
+        	else {
+        		inputStream = httpExchange.getRequestBody();
+        		bytes = new byte [inputStream.available()];
+        	}
+        	BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
 			bufferedInputStream.read(bytes, 0, bytes.length);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -100,7 +112,11 @@ public class ServerPacket
 		File file = new File(resourcesPath+"/error404.html");
 		return file;
 	}
-
+	
+	public String getResourceType() {
+		return packetInfo.getResourceType();
+	}
+	
 	public boolean isResource() {
 		return packetInfo.isResource();
 	}

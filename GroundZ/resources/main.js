@@ -2,10 +2,23 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "0.98C"
+let appVersion = "1.0"
 
 function setup(){
-    document.getElementById("debugHeader").innerHTML += appVersion
+    document.getElementById("header").innerHTML += appVersion
+    onClr()
+
+    var seperators = document.getElementsByClassName("splitter")
+    for(var i = 0; i < seperators.length; i++){
+        console.log()
+        if(getComputedStyle(seperators[i]).getPropertyValue("cursor")=="col-resize"){
+            dragElement( seperators[i], "H", i)
+        }
+        else{
+            dragElement( seperators[i], "V", i)
+        }
+    }
+
 }
 
 //OnClicks
@@ -50,4 +63,57 @@ function addText(elementId, before, text){
         e => document.getElementById(elementId).value += "\nERROR : " + e
     )
     
+}
+
+
+
+
+
+
+
+function dragElement(splitter, direction, id){
+    splitter.onmousedown = onMouseDown;
+    
+    var initialPos
+    
+    function onMouseDown(e)
+    {
+        //console.log("mouse down: " + e.clientY);
+        initialPos = e.clientX
+        document.documentElement.style.cursor = "col-resize";
+        if(direction == "V")
+        {
+            document.documentElement.style.cursor = "row-resize";
+        }
+        document.onmousemove = onMouseMove;
+        document.onmouseup = () => {
+            //console.log("mouse up");
+            document.documentElement.style.cursor = "default";
+            document.onmousemove = document.onmouseup = null;
+        }
+    }
+
+    function onMouseMove(e)
+    {
+        var max = splitter.parentElement.clientWidth
+        var curPos = e.clientX
+        var posOff = splitter.parentElement.getBoundingClientRect().x
+        if(direction == "V")
+        {
+            //console.log(splitter.parentElement.getBoundingClientRect().y)
+            max = splitter.parentElement.clientHeight
+            posOff = splitter.parentElement.getBoundingClientRect().y
+        }
+        if(direction == "V")
+        {
+            curPos = e.clientY
+        }
+        var val = max - (max - curPos + posOff)
+        var handelSnap = 50//getStorage(1)
+        var handel = 10 //TODO redo storage
+        if(val < handelSnap || curPos < 0){val = 0}
+        if(val > max - handelSnap - handel){val = max - handel}
+            document.documentElement.style.setProperty("--Splt"+id, val+"px");
+        //console.log("mouse move: " + e.clientX);
+    }
 }

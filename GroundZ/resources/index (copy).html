@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>JS Editor</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link rel="icon" href="imgs/dezlIcon.png">
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+	<body onload="start()">
+		<div class="S_Buttons">
+			<div class="M_Toggle button0 hover0" onclick="state('M0')">Menu
+			</div><div class="button0 hover0" onclick="state('F0')">Save
+			</div><div class="button0 hover0" onclick="state('F1')">Load
+			</div><div class="credit">  Made by <a href="https://www.youtube.com/channel/UCYN3XVLVCLYqw6b69JM9IbQ">Dezl</a>;</div>
+		</div>
+    <div class="Menu hiddenObj">
+      <div class="max-width">
+        <h2>Used Packages</h2>
+        <p>Define the Packages you want to use. Your browser will save this info.<br>
+        Seperate the Names by ';'. The code will search for: ' init + "Name" + .js '.<br>
+        You can type it out or just enter the "Name". <a href="https://de.wikipedia.org/wiki/JavaScript">More help here</a></p>
+        <input class="M_Preferences M_W" ></input><button onclick="state('P0')">Save</button>
+        <h2>Editor Look</h2>
+        <p>Font Size (Change Fontsize)</p>
+        <input type="range" min ="8" max="50" step="0.1" class="M_Preferences M_W" onclick="state('P1')"></input>
+        <p>Editor</p>
+        <div class="id_Text">Background :<input class="M_Preferences M_Color" onchange="state('P2')" type="color"></input></div>
+        <div class="id_Text">Font Color :<input class="M_Preferences M_Color" onchange="state('P3')" type="color"></input></div>
+        <p>Console Colors</p>                                               
+        <div class="id_Text">Background :<input class="M_Preferences M_Color" onchange="state('P4')" type="color"></input></div>
+        <div class="id_Text">Font Color :<input class="M_Preferences M_Color" onchange="state('P5')" type="color"></input></div>
+        <div class="id_Text">Error Color :<input class="M_Preferences M_Color" onchange="state('P6')" type="color"></input></div>
+        <p>Console Height (Change in px)</p>
+        <input type="range" min ="40" max="400" step="10" class="M_Preferences M_W" onclick="state('P7')"></input>
+        <div class="id_Text">Input Back :<input class="M_Preferences M_Color" onchange="state('P8')" type="color"></input></div>
+        <div class="id_Text">Input Font :<input class="M_Preferences M_Color" onchange="state('P9')" type="color"></input></div>
+        <br>
+        <br>
+        <div class="id_Text"><a href="">AGBS/ Terms of use</a></div>
+      </div>
+    </div>
+		<div class="wrapper">
+			<div class="Edit">
+				<div id="_stack" class="stack">
+					<button onclick="addStackNode(this)" class="S_Add_Node">+</button>
+				</div>
+				<div id="Y" class="splitter splt_Y0"></div>
+				<textarea class="S_Text" spellcheck="false"></textarea>
+			</div>
+			<div id="Y" class="splitter splt_X0"></div>
+			<div class="S_Console">
+				<div class="S_C_Text"></div>
+				<input class="S_C_Edit" spellcheck="false"></input>
+			</div>
+			<div id="X" class="splitter splt_Y1"></div>
+			<div class="view">View</div>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
