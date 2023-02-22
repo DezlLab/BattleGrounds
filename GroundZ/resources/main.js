@@ -68,9 +68,6 @@ function addText(elementId, before, text){
 
 
 
-
-
-
 function dragElement(splitter, direction, id){
     splitter.onmousedown = onMouseDown;
     
