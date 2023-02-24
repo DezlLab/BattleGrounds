@@ -23,13 +23,35 @@ function setup(){
 
 //OnClicks
 function onRun(){
-    addText('outputArea', "\nOutput: ", fetchElementValue("java.run", 'codeArea'))
+    fetchElementValue("java.run", 'codeArea').then(
+        response => processData(JSON.parse(response))
+    ).catch(
+        //e => document.getElementById(elementId).value += "\nERROR : " + e
+    )
+    
     scrollDown('outputArea')
 }
 
 function onClr(){
     console.log("sd")
     document.getElementById('outputArea').value = "GroundZ by Luca P. and Theo L. " + appVersion
+
+
+    backBlocks = document.getElementsByClassName("backBlock")
+    for (i = 1; i < backBlocks.length; i++){
+        backBlocks[i].innerHTML = ""
+    }
+}
+
+function onContinue(){
+    console.log("SUSUUUSUSUss")
+    fetchElementValue("java.continue", 'codeArea').then(
+        response => processData(JSON.parse(response))
+    ).catch(
+        e => document.getElementById(elementId).value += "\nERROR : " + e
+    )
+    
+    scrollDown('outputArea')
 }
 
 function scrollDown(elementId){
@@ -55,13 +77,51 @@ function getText(elementId){
     return document.getElementById(elementId).value
 }
 
+async function processData(jsonData){
+    if(jsonData != null){
+        addText('outputArea', "\nPROG : ", jsonData["textData"])
+        if(!jsonData["endOfData"]){
+            //onContinue()
+        }
+
+        playerMoves = jsonData["playerMoves"]
+        console.log(playerMoves)
+        first = true
+        gX = 0
+        gY = 0
+        xSize = 4
+        backBlocks = document.getElementsByClassName("backBlock")
+        console.log(backBlocks)
+        gX = playerMoves[0]["x"]
+        gY = playerMoves[0]["y"]
+        backBlocks[gX+gY*xSize].innerHTML += "<div id='item'></div>"
+        for (i = 1; i < playerMoves.length; i++) {
+            await sleep(500)
+            playerMove = playerMoves[i]
+            x = playerMove["x"]
+            y = playerMove["y"]
+            backBlocks[gX+gY*xSize].innerHTML = ""
+            gX += x
+            gY += y
+            console.log(x, " == ", y, "::",gX, " == ", gY, "===>", gX+gY*4)
+            backBlocks[gX+gY*xSize].innerHTML += "<div id='item'></div>"
+        }
+    }
+    
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 //Add text to Element
 function addText(elementId, before, text){
-    text.then(
-        text => document.getElementById(elementId).value += before + text
-    ).catch(
-        e => document.getElementById(elementId).value += "\nERROR : " + e
-    )
+    document.getElementById(elementId).value += before + text
+    // text.then(
+    //     text => document.getElementById(elementId).value += before + text
+    // ).catch(
+    //     e => document.getElementById(elementId).value += "\nERROR : " + e
+    // )
     
 }
 

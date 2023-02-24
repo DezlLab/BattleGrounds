@@ -31,9 +31,7 @@ public class InterpreterPlan {
 	private static final HashMap<String, ConversionOperation> conversionOperations = new HashMap<String, ConversionOperation>() {
 		{
 			put("replc", (String code, String[] parameters) ->{
-				while(code.indexOf(parameters[0]) != -1) {
 					code = code.replace(parameters[0], parameters[1]);
-				}
 				return code;
 			});
 			put("add", (String code, String[] parameters) ->{
@@ -43,13 +41,22 @@ public class InterpreterPlan {
 				case "inner": index = code.indexOf("{") + 1; break;
 				case "end": index = code.length(); break;
 				}
-				code = code.substring(0, index) + parameters[1] + code.substring(index);
-				return code;
+				return code.substring(0, index) + parameters[1] + code.substring(index);
+			});
+			put("allAt", (String code, String[] parameters) ->{
+				int index = -1;
+				switch(parameters[0]) {
+				case "outer": index = 0; break;
+				case "inner": index = code.indexOf("{") + 1; break;
+				case "main": index = code.indexOf("{", code.indexOf("{") + 1) + 1; break;
+				case "end": index = code.indexOf("}"); break;
+				}
+				String mutCode = code.substring(index);
+				mutCode = mutCode.replace(parameters[1], parameters[2]);
+				return code.substring(0, index) + mutCode;
 			});
 			put("remov", (String code, String[] parameters) ->{
-				while(code.indexOf(parameters[0]) != -1) {
-					code = code.replace(parameters[0], "");
-				}
+				code = code.replace(parameters[0], "");
 				return code;
 			});
 			//put("",conversionOperationFunctions[2]);
@@ -71,6 +78,10 @@ public class InterpreterPlan {
 	
 	public void addConversion(String from, String to) {
 		conversionData.add(new ConversionData("replc", new String[]{from, to}));
+	}
+	
+	public void addConversionAt(String at, String from, String to) {
+		conversionData.add(new ConversionData("allAt", new String[]{at, from, to}));
 	}
 	
 	public void addStatment(String at, String str) {

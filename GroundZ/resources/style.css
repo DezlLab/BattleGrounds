@@ -47,9 +47,9 @@
 #playArea{
 	overflow: hidden;
 
-	padding: 10px;
+	padding: 2%;
     background-color: rgb(183, 217, 217);
-	border-radius: 25px;
+	border-radius: 5%;
 	position: absolute;
 	margin: 0 0 auto;
 	transform: translate(-50%, -50%);
@@ -64,12 +64,12 @@
 #item{
 	background-color: rgb(0, 170, 37);
 	border: 1px solid #51ff00;
-	border-radius: 25px;
+	border-radius: 45%;
 	margin: 10%;
 	height: calc(80% - 2px);
 	width: calc(80% - 2px);
 	transition: 0.5s;
-	animation-name: down;
+	/*animation-name: down;*/
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
 }
@@ -91,18 +91,18 @@
 	position: relative;
 	background-color: rgb(255, 166, 0);
 	border: 1px solid #ffed4c;
-	border-radius: 5px;
+	border-radius: 10%;
 	top: -1px;
 	left: -1px;
 	height: calc(100%);
 	width: calc(100%);
 }
 
-#backBlock{
+.backBlock{
 	display: inline-block;
 	background-color: rgb(171, 214, 237);
 	border: 1px solid #86a0aa;
-	border-radius: 15px;
+	border-radius: 10%;
 	height: calc(100% / var(--playAreaBlocks) - 2px);
 	width: calc(100% / var(--playAreaBlocks) - 2px);
 }
