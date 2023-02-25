@@ -12,6 +12,10 @@ public class Grid
 	
 	
 	
+	//						width  height  
+	private int[] Level1 = {1     ,1     ,};
+	
+	
 
 
 

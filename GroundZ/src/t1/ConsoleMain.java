@@ -1,21 +1,30 @@
 package t1;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.spi.FileSystemProvider;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class ConsoleMain {
-
+	
+	
+	
 	public static void main(String[] args) 
 	{
+		Menu menu = new Menu();
 		// TODO Auto-generated method stu
 		Grid grid = new Grid(20,20);
 		
 		Player player = new Player(new Vector2Df(1.0f,1.0f),grid);
-		Player player1 = new Player(new Vector2Df(1.0f,1.0f),grid);
+		//Player player1 = new Player(new Vector2Df(1.0f,1.0f),grid);
 		
 		player.setPin(43);
-		System.out.println(player1.getPin());
+		//System.out.println(player1.getPin());
+		
+		
+		System.out.println(menu);
 		
 		System.out.println(player);
 		Scanner eingabe = new Scanner(System.in); 
@@ -46,6 +55,7 @@ public class ConsoleMain {
 			} catch (NoSuchMethodException | SecurityException e) {
 			
 			}
+			clearScreen();
 			 System.out.println(player);
 			 try {
 				TimeUnit.MILLISECONDS.sleep(500);;
@@ -59,6 +69,10 @@ public class ConsoleMain {
 			
 			
 		}
+	}
+	public static void clearScreen() 
+	{  	
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 
 }
