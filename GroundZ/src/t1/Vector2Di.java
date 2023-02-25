@@ -28,7 +28,7 @@ public class Vector2Di extends Vector{
 	}
 
 	public Vector2Df toFloat() {
-		return new Vector2Df(this);
+		return new Vector2Df((float)(this.x), (float)(this.y));
 	}
 	
 	public Vector2Di toInt() {

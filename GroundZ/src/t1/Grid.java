@@ -85,7 +85,7 @@ public class Grid
 				objects.add( new Tunel(true) );
 			else if ((int) (Math.random()*100 )== 3)
 				objects.add( new Tunel(false) );
-			else if ((int) (Math.random()*50 )== 3)
+			else if ((int) (Math.random()*5 )== 3)
 				objects.add( new Coin() );
 			 
 			else

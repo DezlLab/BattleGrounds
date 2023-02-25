@@ -23,7 +23,7 @@ public class Vector2Df extends Vector{
 	}
 	
 	public Vector2Df(Vector newVec) {
-		Vector2Df vec = (Vector2Df) newVec;
+		Vector2Df vec = newVec.toFloat();
 		this.setX(vec.getX());
 		this.setX(vec.getY());
 	}
@@ -37,8 +37,8 @@ public class Vector2Df extends Vector{
 	}
 	
 	public Vector2Df add(Vector otherVec) { 
-		Vector2Df other = (Vector2Df) otherVec;
-		return new Vector2Df(this.x + other.getX(), this.y + other.getY());
+		Vector2Df other = otherVec.toFloat();
+		return new Vector2Df(this.x + other.x, this.y + other.y);
 	}
 	
 	public Vector2Df sub(Vector otherVec) { 

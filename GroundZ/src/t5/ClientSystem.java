@@ -1,6 +1,6 @@
 package t5;
 
-public class ClientSystem {
+public class ClientSystem{
 
 	private String output;
 	
@@ -15,10 +15,6 @@ public class ClientSystem {
 	public void println(String output) {
 		this.output += output + '\n';
 	}
-	
-//	public String getOutput() {
-//		return this.output;
-//	}
 	
 	public String stripString() {
 		String result = output;

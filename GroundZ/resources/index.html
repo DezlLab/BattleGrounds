@@ -1,23 +1,55 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-16">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href="https://icons.iconarchive.com/icons/uiconstock/e-commerce/256/e-commerce-icon-icon.png"> -->
+    <!-- <link rel="icon" href="data:;base64,=">-->
+    <link rel="icon" type="image/x-icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script> 
+    <script src="main.js"></script>
     <title>BattleGrounds</title>
 </head>
-<body>
-    <h1>BattleGrounds v0.9A</h1>
-    <pre contentEditable="true" style="width: 653px; height: 393px;" id = "codeArea"><div style="color: #5af">Test&ltT&gt</div></pre>
-    <button style = "display:block;"onclick="fetch('java.run', {
-        method : 'POST',
-        body : document.getElementById('codeArea').value
-    }).then((response) => response.text()).then((text) => {
-        document.getElementById('outputArea').value += '\nOutput:' + text;
-        //document.getElementById('outputArea').scrollTop = document.getElementById('outputArea').scrollHeight;
-    })">Run</button><!-- -->
-    <textarea readonly style="resize: none; width: 652px; height: 113px;" id = "outputArea">Output:</textarea>
+<body onload="setup()">
+    <!-- <img src="test.png"> -->
+
+    <div class="S_Buttons">
+        <div id="header"><b>BattleGrounds</b></div>
+        <div class="credit">  Made by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Theo und Luca</a>;</div>
+    </div>
+
+    <div class="wrapper">
+        <div class="Edit">
+            <div id = "wrapper">
+                <textarea id = "codeArea" spellcheck = "false">
+public class Main{
+    public static void main() {
+        //Output to client
+        System.out.println("Hello");
+    }
+}
+                </textarea>
+            </div>
+            <div id="Y" class="splitter splt_Y0"></div>
+            <div id = "playWrapper">
+                <button onclick="onRun()">Run</button>
+                <button onclick="onClr()">Clear</button>
+                <div id = "playArea">
+                    <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
+                    <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
+                    <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
+                    <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="X" class="splitter splt_X0"></div>
+        <div class="S_Console">
+            <textarea readonly spellcheck="false"class="S_C_Text" id="outputArea"></textarea>
+            <input class="S_C_Edit" spellcheck="false"></input>
+        </div>
+    </div>
+
+
 </body>
 </html>

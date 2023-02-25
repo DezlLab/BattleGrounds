@@ -61,10 +61,10 @@ public class Player
 		}
 	}
 	
-	public void down() {this.position.sub(Vector.down());System.out.println(this.position);}
-	public void up() {this.position.add(Vector.up());}
-	public void left() {this.position.add(Vector.left());}
-	public void right() {this.position.add(Vector.right());}
+	public void down() {this.position = this.position.add(Vector.down());System.out.println(this.position);}
+	public void up() {this.position = this.position.add(Vector.up());}
+	public void left() {this.position = this.position.add(Vector.left());}
+	public void right() {this.position = this.position.add(Vector.right());}
 	
 	public void move()
 	{
