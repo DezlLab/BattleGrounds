@@ -2,7 +2,7 @@ package t1;
 
 import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
-
+import t4.CodeRunner;
 public class Player 
 {
 	private static int Pin = 23;
@@ -13,9 +13,9 @@ public class Player
 	private ArrayList<GameObject> map;
 	private Vector2Df destination;
 	private int coins;
+	private CodeRunner codeRunner ;
 	
-	
-	
+	 
 	public static int getPin() {
 		return Pin;
 	}
@@ -61,8 +61,8 @@ public class Player
 		}
 	}
 	
-	public void down() {this.position = this.position.add(Vector.down());System.out.println(this.position);}
-	public void up() {this.position = this.position.add(Vector.up());}
+	public void down() {this.position = this.position.add(Vector.up());System.out.println(this.position);codeRunner.getPlayerMoves().add(position);}
+	public void up(){this.position = this.position.add(Vector.down());}
 	public void left() {this.position = this.position.add(Vector.left());}
 	public void right() {this.position = this.position.add(Vector.right());}
 	

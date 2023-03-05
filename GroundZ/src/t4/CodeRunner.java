@@ -18,7 +18,7 @@ import t5.ClientSystem;
 import t5.GUIServer;
 import t5.ServerPacket;
 import util.Utils;
-
+import t1.Player;
 public class CodeRunner {
 	
 	private boolean debug;
@@ -33,6 +33,9 @@ public class CodeRunner {
 	private CompiledScript compiledCode;
 	public Bindings bindings;
 	
+	private ArrayList<Vector> playerMoves ;
+	private Player player;
+	
 	public CodeRunner(ClientSystem clientSystem, boolean debug) {
 		
 		this.debug = debug;
@@ -40,6 +43,8 @@ public class CodeRunner {
 		this.clientSystem = clientSystem;
 		this.codeTransformer = new CodeTransformer();
 		this.interpreter = new Interpreter();
+		player = new Player();
+		playerMoves = new ArrayList<Vector>();
 		ScriptEngineManager manager = new ScriptEngineManager();
 	    ScriptEngine engine = manager.getEngineByName("java");
 	    compiler = (Compilable) engine;
@@ -57,18 +62,20 @@ public class CodeRunner {
 		Utils.debug("==> "+packet.getResourceType());
 		String code = new String(packet.getBytes());
 		code = interpreter.convert(code, curLang);
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+code +"aaaaaaaaaaaaaaaaaa");
 		Utils.debug(code);
 		compile(code);
 		run(null);
 		JSONObject dataToSend = new JSONObject();
 		dataToSend.accumulate("endOfData", false);
 		dataToSend.accumulate("textData", clientSystem.stripString());
-		ArrayList<Vector> playerMoves = new ArrayList<Vector>();
+		
+		
 		playerMoves.add(new Vector2Di(0, 0));
-		playerMoves.add(new Vector2Di(1, 1));
-		playerMoves.add(new Vector2Di(1, 1));
-		playerMoves.add(new Vector2Di(1, 1));
-		playerMoves.add(new Vector2Di(0, -1));
+//		playerMoves.add(new Vector2Di(1, 1));
+//		playerMoves.add(new Vector2Di(1, 1));
+//		playerMoves.add(new Vector2Di(1, 1));
+//		playerMoves.add(new Vector2Di(0, -1));
 		dataToSend.accumulate("playerMoves", playerMoves);//////HIER player moves hin ArrayList<Vector>
 		packet.sendResponse(dataToSend.toString().getBytes());
 		//packet.sendResponse(clientSystem.stripString().getBytes());
@@ -144,4 +151,14 @@ public class CodeRunner {
 	public void setDebug(boolean debug) {
 		this.debug = debug;
 	}
+
+	public ArrayList<Vector> getPlayerMoves() {
+		return playerMoves;
+	}
+
+	public void setPlayerMoves(ArrayList<Vector> playerMoves) {
+		this.playerMoves = playerMoves;
+	}
+	
+	
 }
