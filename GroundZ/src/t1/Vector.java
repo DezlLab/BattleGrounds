@@ -3,8 +3,8 @@ package t1;
 public abstract class Vector {
 	
 	private static VectorConst zero	= new VectorConst(new Vector2Di(0, 0));
-	private static VectorConst up	= new VectorConst(new Vector2Di(0, 1));
-	private static VectorConst down	= new VectorConst(new Vector2Di(0, -1));
+	private static VectorConst up	= new VectorConst(new Vector2Di(0, -1));
+	private static VectorConst down	= new VectorConst(new Vector2Di(0, 1));
 	private static VectorConst left	= new VectorConst(new Vector2Di(-1, 0));
 	private static VectorConst right= new VectorConst(new Vector2Di(1, 0));
 	
@@ -40,4 +40,11 @@ public abstract class Vector {
 	abstract float abs();
 	
 	public abstract String toString();
-}
+	
+	public boolean compare(Vector vec) {
+        if(this.toInt().getX() == vec.toInt().getX() && this.toInt().getY() == vec.toInt().getY()) {
+            return true;
+        }
+        return false;
+    }
+	}

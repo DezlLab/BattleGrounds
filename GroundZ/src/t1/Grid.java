@@ -81,13 +81,18 @@ public class Grid
 		//int random = 3;//(int) (Math.random()*height*width);
 		for (int i= 0; i<height*width;i++) 
 		{
-			if ((int) (Math.random()*100 )== 3)
-				objects.add( new Tunel(true) );
-			else if ((int) (Math.random()*100 )== 3)
-				objects.add( new Tunel(false) );
-			else if ((int) (Math.random()*5 )== 3)
-				objects.add( new Coin() );
-			 
+			if(i!=0)
+			{
+				if ((int) (Math.random()*100 )== 3)
+					objects.add( new Tunel(true) );
+				else if ((int) (Math.random()*100 )== 3)
+					objects.add( new Tunel(false) );
+				else if ((int) (Math.random()*5 )== 3)
+					objects.add( new Coin() );
+				 
+				else
+					objects.add( new NormalStone() );
+			}
 			else
 				objects.add( new NormalStone() );
 		}

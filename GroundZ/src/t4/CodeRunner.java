@@ -15,6 +15,7 @@ import codeSupport.CodeTransformer;
 import gameLogic.GameAction;
 import t1.Player;
 import t1.Vector;
+import t1.Vector2Df;
 import t1.Vector2Di;
 import t5.ClientSystem;
 import t5.GUIServer;
@@ -36,16 +37,14 @@ public class CodeRunner {
 	private CompiledScript compiledCode;
 	public Bindings bindings;
 	
-<<<<<<< HEAD
+
 	private ArrayList<Vector> playerMoves ;
-	private Player player;
+
 	
-	public CodeRunner(ClientSystem clientSystem, boolean debug) {
-		
-=======
+
 	public CodeRunner(ClientSystem clientSystem, Player player, boolean debug) {
 		this.player = player;
->>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
+
 		this.debug = debug;
 		this.codeSupportedLangs = new ArrayList<>();
 		this.clientSystem = clientSystem;
@@ -68,32 +67,20 @@ public class CodeRunner {
 		Utils.debug("==> "+packet.getResourceType());
 		String code = new String(packet.getBytes());
 		code = interpreter.convert(code, curLang);
-<<<<<<< HEAD
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+code +"aaaaaaaaaaaaaaaaaa");
-		Utils.debug(code);
-=======
+
 		if(debug) {
 			Utils.debug(code);
 		}
->>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
+
 		compile(code);
 		run(null);
 		
 		JSONObject dataToSend = new JSONObject();
 		dataToSend.accumulate("endOfData", false);
 		dataToSend.accumulate("textData", clientSystem.stripString());
-<<<<<<< HEAD
-		
-		
-		playerMoves.add(new Vector2Di(0, 0));
-//		playerMoves.add(new Vector2Di(1, 1));
-//		playerMoves.add(new Vector2Di(1, 1));
-//		playerMoves.add(new Vector2Di(1, 1));
-//		playerMoves.add(new Vector2Di(0, -1));
-		dataToSend.accumulate("playerMoves", playerMoves);//////HIER player moves hin ArrayList<Vector>
-=======
+
 		dataToSend.accumulate("playerMoves", player.getActions());
->>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
+		player.setPosition(new Vector2Df(1.0f,1.0f));
 		packet.sendResponse(dataToSend.toString().getBytes());
 	}
 	

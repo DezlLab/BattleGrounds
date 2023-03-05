@@ -27,7 +27,7 @@ public class Coin extends GameObject{
 	@Override
 	boolean canLeave(String direction) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }

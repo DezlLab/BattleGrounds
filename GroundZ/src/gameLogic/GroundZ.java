@@ -17,8 +17,8 @@ public class GroundZ {
 	private static Player player;
 	
 	public static void main(String[] args) {
-		Grid grid = new Grid(20,20);
-		player = new Player(new Vector2Df(5.0f,5.0f),grid);
+		Grid grid = new Grid(5,5);
+		player = new Player(new Vector2Df(1.0f,1.0f),grid);
 		
 		ClientSystem clientSystem = new ClientSystem();
 		String[] clientArgs = {"Luca", "Theo"};

@@ -2,13 +2,13 @@ package t1;
 
 import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
-<<<<<<< HEAD
+
 import t4.CodeRunner;
-=======
+
 
 import gameLogic.GameAction;
 
->>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
+
 public class Player 
 {
 	private static int Pin = 23;
@@ -19,15 +19,15 @@ public class Player
 	private ArrayList<GameObject> map;
 	private Vector2Df destination;
 	private int coins;
-<<<<<<< HEAD
-	private CodeRunner codeRunner ;
+	private Vector2Df lastDestination;
+
 	
 	 
-=======
+
 	private ArrayList<GameAction> actions;
 	
 	
->>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
+
 	public static int getPin() {
 		return Pin;
 	}
@@ -38,15 +38,17 @@ public class Player
 
 	public Player()
 	{
-		this.position = new Vector2Df(0f,0f);
+		this.position = new Vector2Df(1f,1f);
 	}
 	
 	public Player(  Vector2Df position,Grid grid ) {
+	
 		this.actions = new ArrayList<GameAction>();
 		this.grid = grid;
 		this.map = grid.getObjects();
 		this.position = position;
 		this.destination = new Vector2Df(position.getX(),position.getY());	
+		this.lastDestination = new Vector2Df(position.getX(),position.getY());	
 		look = "▲";
 		rotation = "Up";
 		coins = 0;
@@ -72,16 +74,41 @@ public class Player
 		}
 	}
 	
-<<<<<<< HEAD
-	public void down() {this.position = this.position.add(Vector.up());System.out.println(this.position);codeRunner.getPlayerMoves().add(position);}
-	public void up(){this.position = this.position.add(Vector.down());}
-	public void left() {this.position = this.position.add(Vector.left());}
-	public void right() {this.position = this.position.add(Vector.right());}
-=======
-	public void down() {actions.add(GameAction.move(Vector.down()));}
-	public void up() {actions.add(GameAction.move(Vector.up()));}
-	public void left() {actions.add(GameAction.move(Vector.left()));}
-	public void right() {actions.add(GameAction.move(Vector.right()));}
+
+	public void down()
+		{
+		goveDown();
+		if( lastDestination.compare(position) )
+			actions.add(GameAction.move(Vector.down()));
+		else
+			actions.add(GameAction.move(Vector.zero()));
+		}
+	public void up()
+		{
+		goveUp();
+		System.out.println(this.destination+";"+position+"="+destination.equals(position));
+
+		if( lastDestination.compare(position) )
+			actions.add(GameAction.move(Vector.up()));
+		else
+			actions.add(GameAction.move(Vector.zero()));
+		}
+	public void left()
+		{
+		goveLeft();
+		if( lastDestination.compare(position) )
+			actions.add(GameAction.move(Vector.left()));
+		else
+			actions.add(GameAction.move(Vector.zero()));
+		}
+	public void right()
+		{
+		goveRight();
+		if( lastDestination.compare(position) )
+			actions.add(GameAction.move(Vector.right()));
+		else
+			actions.add(GameAction.move(Vector.zero()));
+		}
 	public void colCoin() {actions.add(GameAction.collectCoin());}
 	
 	public ArrayList<GameAction> getActions() {
@@ -90,9 +117,9 @@ public class Player
 		actions = new ArrayList<GameAction>();
 		return res;
 	}
->>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
-	
-	public void move()
+
+	//Console 
+	public void moveUp()
 	{
 		switch (rotation) {
 		case "Left":
@@ -105,7 +132,7 @@ public class Player
 		default:break;
 		}
 	}
-	public void moveBack()
+	public void moveDown()
 	{
 		switch (rotation) {
 		case "Left":
@@ -153,12 +180,15 @@ public class Player
 		if (map.get(destinationToList()).canLeave("South"))
 		{
 		destination.setY(position.getY()-1);
+		lastDestination.setX(destination.getX());
+		lastDestination.setY(destination.getY());
 		if (map.get(destinationToList()).canEnter("South"))
 			position.setY(destination.getY());
 		else
 			destination.setY(position.getY());
-		collectCoin();
+		
 		}
+		System.out.println(position);	
 	}
 	
 	public void coin()
@@ -170,11 +200,13 @@ public class Player
 		if (map.get(destinationToList()).canLeave("North"))
 		{
 		destination.setY(position.getY()+1);
+		lastDestination.setX(destination.getX());
+		lastDestination.setY(destination.getY());
 		if (map.get(destinationToList()).canEnter("North"))
 			position.setY(destination.getY());
 		else
 			destination.setY(position.getY());
-		collectCoin();
+		
 		}
 	}
 	public void goveLeft()
@@ -182,26 +214,31 @@ public class Player
 		if (map.get(destinationToList()).canLeave("East"))
 		{
 		destination.setX(position.getX()-1);
+		lastDestination.setX(destination.getX());
+		lastDestination.setY(destination.getY());
 		if (map.get(destinationToList()).canEnter("East"))
 			position.setX(destination.getX());	
 		else
 			destination.setX(position.getX());
-		collectCoin();
+		
 		}
+		System.out.println(position);	
 	}
 	public void goveRight()
 	{
 		if (map.get(destinationToList()).canLeave("West"))
 		{
 		destination.setX(position.getX()+1);
+		lastDestination.setX(destination.getX());
+		lastDestination.setY(destination.getY());
 		if (map.get(destinationToList()).canEnter("West"))
 			position.setX(destination.getX());	
 		else
 			destination.setX(position.getX());
-		collectCoin();
+		
 		}
 		
-			
+		System.out.println(position);	
 	}
 	public void collectCoin()
 	{
@@ -295,4 +332,13 @@ public class Player
 		gridTranslation += "\n     Coins:" + coins + "        OverObject:  " + map.get(positionToList()) ;
 		return gridTranslation;
 	}
+
+	public Vector2Df getPosition() {
+		return position;
+	}
+
+	public void setPosition(Vector2Df position) {
+		this.position = position;
+	}
+	
 }
