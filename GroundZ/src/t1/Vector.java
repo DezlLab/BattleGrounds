@@ -8,28 +8,28 @@ public abstract class Vector {
 	private static VectorConst left	= new VectorConst(new Vector2Di(-1, 0));
 	private static VectorConst right= new VectorConst(new Vector2Di(1, 0));
 	
-	public static Vector zero() {
+	public static VectorConst zero() {
 		return zero;
 	}
 	
-	public static Vector up() {
+	public static VectorConst up() {
 		return up;
 	}
 	
-	public static Vector down() {
+	public static VectorConst down() {
 		return down;
 	}
 	
-	public static Vector left() {
+	public static VectorConst left() {
 		return left;
 	}
 	
-	public static Vector right () {
+	public static VectorConst right () {
 		return right;
 	}
 	
-	abstract Vector2Df toFloat();
-	abstract Vector2Di toInt();
+	public abstract Vector2Df toFloat();
+	public abstract Vector2Di toInt();
 	
 	abstract Vector add(Vector other);
 	abstract Vector sub(Vector other);

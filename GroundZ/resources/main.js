@@ -30,21 +30,25 @@ function onRun(){
     )
     
     scrollDown('outputArea')
+    clearPlayArea()
 }
 
 function onClr(){
+    timePromise = "done"
     console.log("sd")
     document.getElementById('outputArea').value = "GroundZ by Luca P. and Theo L. " + appVersion
+    clearPlayArea()
+}
 
-
-    backBlocks = document.getElementsByClassName("backBlock")
-    for (i = 1; i < backBlocks.length; i++){
-        backBlocks[i].innerHTML = ""
-    }
+function clearPlayArea(){//TODO make to init grid info to dif field
+    // backBlocks = document.getElementsByClassName("backBlock")
+    // for (i = 0; i < backBlocks.length; i++){
+    //     backBlocks[i].innerHTML = ""
+    // }
+    clearPlayer()
 }
 
 function onContinue(){
-    console.log("SUSUUUSUSUss")
     fetchElementValue("java.continue", 'codeArea').then(
         response => processData(JSON.parse(response))
     ).catch(
@@ -77,6 +81,7 @@ function getText(elementId){
     return document.getElementById(elementId).value
 }
 
+timePromise = null
 async function processData(jsonData){
     if(jsonData != null){
         addText('outputArea', "\nPROG : ", jsonData["textData"])
@@ -86,28 +91,79 @@ async function processData(jsonData){
 
         playerMoves = jsonData["playerMoves"]
         console.log(playerMoves)
-        first = true
-        gX = 0
-        gY = 0
-        xSize = 4
-        backBlocks = document.getElementsByClassName("backBlock")
-        console.log(backBlocks)
-        gX = playerMoves[0]["x"]
-        gY = playerMoves[0]["y"]
-        backBlocks[gX+gY*xSize].innerHTML += "<div id='item'></div>"
-        for (i = 1; i < playerMoves.length; i++) {
-            await sleep(500)
+        setPlayerPos(0, 0)
+        for (i = 0; i < playerMoves.length; i++) {
+            timePromise = sleep(550)
+            await timePromise
+            if(timePromise == "done"){
+                return;
+            }
+            console.log("done")
             playerMove = playerMoves[i]
-            x = playerMove["x"]
-            y = playerMove["y"]
-            backBlocks[gX+gY*xSize].innerHTML = ""
-            gX += x
-            gY += y
-            console.log(x, " == ", y, "::",gX, " == ", gY, "===>", gX+gY*4)
-            backBlocks[gX+gY*xSize].innerHTML += "<div id='item'></div>"
+            switch(playerMove["actionName"]){
+                case "move": movePlayer(playerMove["direction"]);break;
+                case "collectCoin": collectCoin(); break;
+            }
         }
     }
     
+}
+
+gX = 0
+gY = 0
+xSize = 4
+backBlocks = document.getElementsByClassName("backBlock")
+player = document.createElement("div");
+player.id = "item"
+
+function collectCoin(){
+    player.parentElement.innerHTML = ""
+    drawPlayer();
+}
+
+function setPlayerPos(x, y){
+    clearPlayer()
+    gX = x
+    gY = y
+    drawPlayer();
+}
+
+function movePlayer(direction){
+    clearPlayer()
+    x = direction["x"]
+    y = direction["y"]
+    console.log(x,y)
+    if(Math.abs(x)+Math.abs(y) > 0){
+        if(Math.abs(x) > 0){
+            if(x > 0){
+                player.classList = "moveRight"
+            }
+            else{
+                player.classList = "moveLeft"
+            }
+        }
+        else{
+            if(y > 0){
+                player.classList = "moveDown"
+            }
+            else{
+                player.classList = "moveUp"
+            }
+        }
+    }
+    
+    console.log(player.classList)
+    drawPlayer();
+    gX += x
+    gY += y
+}
+function clearPlayer(){
+    player.classList = ""
+    player.remove();
+    //backBlocks[gX+gY*xSize].innerHTML = ""
+}
+function drawPlayer(){
+    backBlocks[gX+gY*xSize].appendChild(player)
 }
 
 function sleep(ms) {

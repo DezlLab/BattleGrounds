@@ -2,7 +2,13 @@ package t1;
 
 import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import t4.CodeRunner;
+=======
+
+import gameLogic.GameAction;
+
+>>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
 public class Player 
 {
 	private static int Pin = 23;
@@ -13,9 +19,15 @@ public class Player
 	private ArrayList<GameObject> map;
 	private Vector2Df destination;
 	private int coins;
+<<<<<<< HEAD
 	private CodeRunner codeRunner ;
 	
 	 
+=======
+	private ArrayList<GameAction> actions;
+	
+	
+>>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
 	public static int getPin() {
 		return Pin;
 	}
@@ -30,8 +42,7 @@ public class Player
 	}
 	
 	public Player(  Vector2Df position,Grid grid ) {
-		
-		super();
+		this.actions = new ArrayList<GameAction>();
 		this.grid = grid;
 		this.map = grid.getObjects();
 		this.position = position;
@@ -61,10 +72,25 @@ public class Player
 		}
 	}
 	
+<<<<<<< HEAD
 	public void down() {this.position = this.position.add(Vector.up());System.out.println(this.position);codeRunner.getPlayerMoves().add(position);}
 	public void up(){this.position = this.position.add(Vector.down());}
 	public void left() {this.position = this.position.add(Vector.left());}
 	public void right() {this.position = this.position.add(Vector.right());}
+=======
+	public void down() {actions.add(GameAction.move(Vector.down()));}
+	public void up() {actions.add(GameAction.move(Vector.up()));}
+	public void left() {actions.add(GameAction.move(Vector.left()));}
+	public void right() {actions.add(GameAction.move(Vector.right()));}
+	public void colCoin() {actions.add(GameAction.collectCoin());}
+	
+	public ArrayList<GameAction> getActions() {
+		System.out.println(actions);
+		ArrayList<GameAction> res = actions;
+		actions = new ArrayList<GameAction>();
+		return res;
+	}
+>>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
 	
 	public void move()
 	{
@@ -227,7 +253,6 @@ public class Player
 	{
 		int index = 0;
 		index = ((int) destination.getY() ) *  grid.getWidth()  + (int)destination.getX()  ;
-		
 		return index;
 	}
 	

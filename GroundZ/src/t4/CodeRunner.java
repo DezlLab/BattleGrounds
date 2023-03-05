@@ -12,6 +12,8 @@ import javax.script.ScriptException;
 import org.json.JSONObject;
 
 import codeSupport.CodeTransformer;
+import gameLogic.GameAction;
+import t1.Player;
 import t1.Vector;
 import t1.Vector2Di;
 import t5.ClientSystem;
@@ -26,22 +28,27 @@ public class CodeRunner {
 	private String curLang;
 	
 	private ClientSystem clientSystem;
-	private CodeTransformer codeTransformer;
+	private Player player;
+	
 	private Interpreter interpreter;
 	
 	private Compilable compiler;
 	private CompiledScript compiledCode;
 	public Bindings bindings;
 	
+<<<<<<< HEAD
 	private ArrayList<Vector> playerMoves ;
 	private Player player;
 	
 	public CodeRunner(ClientSystem clientSystem, boolean debug) {
 		
+=======
+	public CodeRunner(ClientSystem clientSystem, Player player, boolean debug) {
+		this.player = player;
+>>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
 		this.debug = debug;
 		this.codeSupportedLangs = new ArrayList<>();
 		this.clientSystem = clientSystem;
-		this.codeTransformer = new CodeTransformer();
 		this.interpreter = new Interpreter();
 		player = new Player();
 		playerMoves = new ArrayList<Vector>();
@@ -55,20 +62,27 @@ public class CodeRunner {
 	    
 	    addSupportedLang("playGroundStyle");
 	    setSupportedLang("playGroundStyle");
-	    setVar("clientSystem", clientSystem);
 	}
 	
 	public void handel(ServerPacket packet) {
 		Utils.debug("==> "+packet.getResourceType());
 		String code = new String(packet.getBytes());
 		code = interpreter.convert(code, curLang);
+<<<<<<< HEAD
 		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+code +"aaaaaaaaaaaaaaaaaa");
 		Utils.debug(code);
+=======
+		if(debug) {
+			Utils.debug(code);
+		}
+>>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
 		compile(code);
 		run(null);
+		
 		JSONObject dataToSend = new JSONObject();
 		dataToSend.accumulate("endOfData", false);
 		dataToSend.accumulate("textData", clientSystem.stripString());
+<<<<<<< HEAD
 		
 		
 		playerMoves.add(new Vector2Di(0, 0));
@@ -77,15 +91,10 @@ public class CodeRunner {
 //		playerMoves.add(new Vector2Di(1, 1));
 //		playerMoves.add(new Vector2Di(0, -1));
 		dataToSend.accumulate("playerMoves", playerMoves);//////HIER player moves hin ArrayList<Vector>
+=======
+		dataToSend.accumulate("playerMoves", player.getActions());
+>>>>>>> 87e6fc5f3132f9db954d2dabddd263eef95c3384
 		packet.sendResponse(dataToSend.toString().getBytes());
-		//packet.sendResponse(clientSystem.stripString().getBytes());
-	}
-	public void handel(String code, boolean t) {
-		code = interpreter.convert(code, curLang);
-		Utils.debug(code);
-		compile(code);
-		run(null);
-		//packet.sendResponse(clientSystem.stripString().getBytes());
 	}
 	
 	public void compile(String code) {
@@ -97,23 +106,12 @@ public class CodeRunner {
 	}
 	
 	public void run(String[] args) {
-		setVar("args", new String[]{"Luca", "Theo"});
 		try {
 			Object result = compiledCode.eval(bindings);
 		} catch (ScriptException e) {
 			e.printStackTrace();
 		}
 	}
-	
-//	public void debugStep(String password) {
-//		if (password == "SQLSequenzDiagram") {
-//			Utils.debug("lol");
-//			//guiServer.notifyAll();
-//			//guiServer.test();
-//			//packet.sendResponse(("From code").getBytes());
-//		}
-//		
-//	}
 	
 	public void setSupportedLang(String lang) {
 		if(this.codeSupportedLangs.contains(lang)) {
@@ -132,16 +130,19 @@ public class CodeRunner {
 		this.codeSupportedLangs.add(lang);
 	}
 	
-	private void setVar(String varName, Object value) {
-		bindings.put(varName, value);
-	}
-	
-	public void setVar(String varName, Object value, String s) {
+	public void setVar(String varName, Object value) {
 		InterpreterPlan iPlan = interpreter.getInterpreterPlan(curLang);
 		//Utils.debug("public static "+value.getClass().getSimpleName()+" "+varName+";");
 		iPlan.addStatment("inner", "\npublic static "+value.getClass().getSimpleName()+" "+varName+";");
-		iPlan.addStatment("outer", "import "+value.getClass().getName()+";\n");
-		setVar(varName, value);
+		if(!value.getClass().isArray()) {
+			iPlan.addStatment("outer", "import "+value.getClass().getName()+";\n");
+		}
+		else {
+			String arrayPath = value.getClass().getTypeName();
+			arrayPath = arrayPath.replace("[]", "");
+			iPlan.addStatment("outer", "import "+arrayPath+";\n");
+		}
+		bindings.put(varName, value);
 	}
 	
 	public boolean isDebug() {
