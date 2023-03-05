@@ -4,7 +4,7 @@ public class Vector2Di extends Vector{
 	private int x;
 	private int y;
 	
-	interface Limiter {
+	public interface Limiter {
 		int set (int f);
 	}
 	

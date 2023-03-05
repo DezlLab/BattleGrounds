@@ -20,8 +20,6 @@ public class GUIServer{
 	private CodeRunner jEngine;
 	private ArrayList<ServerPacket> packetList;
 	
-	private Player player;
-	
 	public GUIServer() { this(8080);}
 	
 	public GUIServer(int port) { 

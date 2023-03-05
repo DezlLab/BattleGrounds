@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 public class Utils {
 	
-	private final static boolean DEBUG = true;
+	private final static boolean DEBUG = false;
 	private final static boolean LOGERR = true;
 	private final static boolean DISPLAY = true;
 	

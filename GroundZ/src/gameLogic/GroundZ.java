@@ -21,36 +21,12 @@ public class GroundZ {
 		player = new Player(new Vector2Df(5.0f,5.0f),grid);
 		
 		ClientSystem clientSystem = new ClientSystem();
-		CodeRunner jEngine = new CodeRunner(clientSystem, false);
+		String[] clientArgs = {"Luca", "Theo"};
+		CodeRunner jEngine = new CodeRunner(clientSystem, player, false);
+		jEngine.setVar("clientSystem", clientSystem);
+		jEngine.setVar("player", player);
+		jEngine.setVar("args", clientArgs);
 		GUIServer gui = new GUIServer(8989, "resources/config.json", jEngine);
-		jEngine.setVar("player", player, "");
-		jEngine.setVar("jEngine", jEngine, "");//TODO make CodeHandler or Client to split jEngine and this
-
-//		while(true) {
-//			try {
-//				Thread.sleep(500);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//	        ArrayList<ServerPacket> packetList = gui.getPacketList();
-//	        boolean[] clientRunning = {true};
-//	        System.out.println("Process Queue"+packetList);
-//	        if(packetList.size() > 0) {
-//	        	if(clientRunning[0]) {
-//	        		String toSend = clientSystem.stripString();
-//	        		
-//	        		JSONObject dataToClient = new JSONObject();
-//	        		dataToClient.accumulate("endOfData", false);
-//	        		dataToClient.accumulate("textData", toSend);
-//	        		packetList.get(0).sendResponse(dataToClient.toString().getBytes());
-//			        packetList.remove(0);
-//	        	}
-//	        }
-//		}	
-	}
-	
-	public static Player getPlayer() {
-		return player;
 	}
 }
+

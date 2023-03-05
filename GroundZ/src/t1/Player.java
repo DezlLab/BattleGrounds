@@ -3,6 +3,8 @@ package t1;
 import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
 
+import gameLogic.GameAction;
+
 public class Player 
 {
 	private static int Pin = 23;
@@ -13,7 +15,7 @@ public class Player
 	private ArrayList<GameObject> map;
 	private Vector2Df destination;
 	private int coins;
-	
+	private ArrayList<GameAction> actions;
 	
 	
 	public static int getPin() {
@@ -30,8 +32,7 @@ public class Player
 	}
 	
 	public Player(  Vector2Df position,Grid grid ) {
-		
-		super();
+		this.actions = new ArrayList<GameAction>();
 		this.grid = grid;
 		this.map = grid.getObjects();
 		this.position = position;
@@ -61,10 +62,18 @@ public class Player
 		}
 	}
 	
-	public void down() {this.position = this.position.add(Vector.down());System.out.println(this.position);}
-	public void up() {this.position = this.position.add(Vector.up());}
-	public void left() {this.position = this.position.add(Vector.left());}
-	public void right() {this.position = this.position.add(Vector.right());}
+	public void down() {actions.add(GameAction.move(Vector.down()));}
+	public void up() {actions.add(GameAction.move(Vector.up()));}
+	public void left() {actions.add(GameAction.move(Vector.left()));}
+	public void right() {actions.add(GameAction.move(Vector.right()));}
+	public void colCoin() {actions.add(GameAction.collectCoin());}
+	
+	public ArrayList<GameAction> getActions() {
+		System.out.println(actions);
+		ArrayList<GameAction> res = actions;
+		actions = new ArrayList<GameAction>();
+		return res;
+	}
 	
 	public void move()
 	{
@@ -227,7 +236,6 @@ public class Player
 	{
 		int index = 0;
 		index = ((int) destination.getY() ) *  grid.getWidth()  + (int)destination.getX()  ;
-		
 		return index;
 	}
 	
