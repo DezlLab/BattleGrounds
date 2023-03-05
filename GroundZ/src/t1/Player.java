@@ -86,7 +86,6 @@ public class Player
 	public void up()
 		{
 		goveUp();
-		System.out.println(this.destination+";"+position+"="+destination.equals(position));
 
 		if( lastDestination.compare(position) )
 			actions.add(GameAction.move(Vector.up()));
@@ -222,7 +221,6 @@ public class Player
 			destination.setX(position.getX());
 		
 		}
-		System.out.println(position);	
 	}
 	public void goveRight()
 	{
@@ -236,9 +234,7 @@ public class Player
 		else
 			destination.setX(position.getX());
 		
-		}
-		
-		System.out.println(position);	
+		}	
 	}
 	public void collectCoin()
 	{

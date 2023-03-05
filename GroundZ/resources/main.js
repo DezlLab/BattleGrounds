@@ -98,8 +98,8 @@ async function processData(jsonData){
             if(timePromise == "done"){
                 return;
             }
-            console.log("done")
             playerMove = playerMoves[i]
+            console.log(playerMove["actionName"]);
             switch(playerMove["actionName"]){
                 case "move": movePlayer(playerMove["direction"]);break;
                 case "collectCoin": collectCoin(); break;
@@ -117,7 +117,8 @@ player = document.createElement("div");
 player.id = "item"
 
 function collectCoin(){
-    player.parentElement.innerHTML = ""
+    backBlocks[gX+gY*xSize].innerHTML = ""
+    player.classList = ""
     drawPlayer();
 }
 

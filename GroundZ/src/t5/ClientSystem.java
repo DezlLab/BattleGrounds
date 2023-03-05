@@ -9,10 +9,12 @@ public class ClientSystem{
 	}
 	
 	public void print(String output) {
+		System.out.println(output);
 		this.output += output;
 	}
 	
 	public void println(String output) {
+		System.out.println(output);
 		this.output += output + '\n';
 	}
 	
