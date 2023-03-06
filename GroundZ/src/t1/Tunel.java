@@ -88,4 +88,12 @@ public class Tunel extends GameObject{
 		return false;
 	}
 
+	public boolean isFacingSouth() {
+		return facingSouth;
+	}
+
+	public void setFacingSouth(boolean facingSouth) {
+		this.facingSouth = facingSouth;
+	}
+
 }

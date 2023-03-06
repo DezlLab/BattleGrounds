@@ -8,7 +8,7 @@ public class Grid
 	private int height;
 	private int width;
 	private ArrayList<GameObject> objects;
-	
+	private ArrayList<GameObject> objectsNoBarriers;
 	
 	
 	
@@ -58,6 +58,7 @@ public class Grid
 		this.height = height;
 		this.width = width;
 		objects = new ArrayList<GameObject>();
+		objectsNoBarriers = new ArrayList<GameObject>();
 		newRandomGrid();
 	}
 
@@ -97,6 +98,7 @@ public class Grid
 			else
 				objects.add( new NormalStone() );
 		}
+		objectsNoBarriers = (ArrayList<GameObject>) objects.clone();
 		addBarrier();
 	}
 	
@@ -194,6 +196,26 @@ public class Grid
 		return ".";
 	}
 
+	
+	public ArrayList<String> objectsToPng()
+	{
+		ArrayList<String> pngPath = new ArrayList<String>();
+		
+		for (GameObject i :objectsNoBarriers)
+			{
+				System.out.println(i.getClass().getName());
+				if(i.getClass().getName().contains("Coin") )
+					pngPath.add("Coin.png");
+				else if (i.getClass().getName().contains("Tunel")  &&  ((Tunel) i).isFacingSouth() == true)
+					pngPath.add("TunelSouth.png");
+				else if (i.getClass().getName().contains("Tunel")  &&  ((Tunel) i).isFacingSouth() == false)
+					pngPath.add("TunelWest.png");
+				else
+					pngPath.add(null);
+			}
+		
+		return pngPath;
+	}
 
 
 	@Override
