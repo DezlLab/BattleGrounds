@@ -2,7 +2,7 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "1.1"
+let appVersion = "1.2"
 
 function setup(){
     document.getElementById("header").innerHTML += appVersion
@@ -48,6 +48,11 @@ function initGrid(jsonData){
 
 //OnClicks
 function onRun(){
+    fetchElementValue("java.setup", 'metaSetup').then(
+        response => initGrid(JSON.parse(response))
+    ).catch(
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
+    )
     fetchElementValue("java.run", 'codeArea').then(
         response => processData(JSON.parse(response))
     ).catch(
@@ -63,6 +68,12 @@ function onClr(){
     console.log("sd")
     document.getElementById('outputArea').value = "GroundZ by Luca P. and Theo L. " + appVersion
     clearPlayArea()
+
+    fetchElementValue("java.setup", 'metaSetup').then(
+        response => initGrid(JSON.parse(response))
+    ).catch(
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
+    )
 }
 
 function clearPlayArea(){
@@ -120,9 +131,9 @@ gX = 0
 gY = 0
 xSize = 4
 backBlocks = document.getElementsByClassName("backBlock")
-player = document.createElement("div");
+player = document.createElement("img");
 player.classList = "item"
-
+player.src = "Player.png"
 function collectCoin(){
     backBlocks[gX+gY*xSize].innerHTML = ""
     clearPlayer();

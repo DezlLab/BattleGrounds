@@ -85,9 +85,9 @@ public class Grid
 		{
 			if(i!=0)
 			{
-				if ((int) (Math.random()*100 )== 3)
+				if ((int) (Math.random()*10 )== 3)
 					objects.add( new Tunnel(true) );
-				else if ((int) (Math.random()*100 )== 3)
+				else if ((int) (Math.random()*10 )== 3)
 					objects.add( new Tunnel(false) );
 				else if ((int) (Math.random()*5 )== 3)
 					objects.add( new Coin() );
@@ -206,9 +206,9 @@ public class Grid
 				
 				if(i.getClass().getName().contains("Coin") )
 					pngPath.add("Coin.png");
-				else if (i.getClass().getName().contains("Tunel")  &&  ((Tunnel) i).isFacingSouth() == true)
+				else if (i.getClass().getName().contains("Tunnel")  &&  ((Tunnel) i).isFacingSouth() == true)
 					pngPath.add("TunnelSouth.png");
-				else if (i.getClass().getName().contains("Tunel")  &&  ((Tunnel) i).isFacingSouth() == false)
+				else if (i.getClass().getName().contains("Tunnel")  &&  ((Tunnel) i).isFacingSouth() == false)
 					pngPath.add("TunnelWest.png");
 				else
 					pngPath.add(null);
