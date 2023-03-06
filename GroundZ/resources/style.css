@@ -60,15 +60,15 @@
 	max-height: 75%;
 }
 
-#item{
+.item{
 	z-index: 10;
-	position: relative;
+	position: absolute;
+	height: calc(100% / var(--playAreaBlocks) - 10px);
+	width: calc(100% / var(--playAreaBlocks) - 10px);
+	transform: scale(0.8);
 	background-color: rgb(0, 170, 37);
 	border: 1px solid #51ff00;
 	border-radius: 45%;
-	margin: 10%;
-	height: calc(80% - 2px);
-	width: calc(80% - 2px);
 	transition: 0.5s;
 	animation-duration: 0.6s;
 	animation-fill-mode: forwards;
@@ -91,25 +91,25 @@
 }
 
 @keyframes left {
-	to {transform: translate(-125%, 0px)}
+	to {transform: translate(-100%, 0px) scale(0.8)}
 }
 @keyframes right {
-	to {transform: translate(125%, 0px)}
+	to {transform: translate(100%, 0px) scale(0.8)}
 }
 @keyframes up {
-	to {transform: translate(0px, -125%)}
+	to {transform: translate(0px, -100%) scale(0.8)}
 }
 @keyframes down {
-	to {transform: translate(0px, 125%)}
+	to {transform: translate(0px, 100%) scale(0.8)}
 }
 
 .block{
-	position: relative;
+	position: absolute;
+	height: calc(100% / var(--playAreaBlocks) - 2px);
+	width: calc(100% / var(--playAreaBlocks) - 2px);
 	background-color: rgb(255, 166, 0);
 	border: 1px solid #ffed4c;
 	border-radius: 10%;
-	height: 100%;
-	width: 100%;
 }
 
 .backBlock{
@@ -119,6 +119,7 @@
 	border-radius: 10%;
 	height: calc(100% / var(--playAreaBlocks) - 2px);
 	width: calc(100% / var(--playAreaBlocks) - 2px);
+
 }
 
 /*Console*/
