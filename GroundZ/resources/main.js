@@ -31,7 +31,7 @@ function setup(){
 
 function initGrid(jsonData){
     if(jsonData != null){
-        grid = jsonData["Grid"];
+        grid = jsonData["grid"];
         console.log(backBlocks, grid.length, grid)
         for(i = 0; i < grid.length; i++){
             if(grid[i] != null){
