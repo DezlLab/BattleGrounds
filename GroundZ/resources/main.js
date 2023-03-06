@@ -8,6 +8,14 @@ function setup(){
     document.getElementById("header").innerHTML += appVersion
     onClr()
 
+    fetchElementValue("java.setup", 'metaSetup').then(
+        response => initGrid(JSON.parse(response))
+    ).catch(
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
+    )
+
+    
+
     var seperators = document.getElementsByClassName("splitter")
     for(var i = 0; i < seperators.length; i++){
         console.log()
@@ -21,12 +29,18 @@ function setup(){
 
 }
 
+function initGrid(jsonData){
+    if(jsonData != null){
+        console.log(jsonData["endOfData"])
+    }
+}
+
 //OnClicks
 function onRun(){
     fetchElementValue("java.run", 'codeArea').then(
         response => processData(JSON.parse(response))
     ).catch(
-        //e => document.getElementById(elementId).value += "\nERROR : " + e
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
     )
     
     scrollDown('outputArea')
@@ -40,22 +54,8 @@ function onClr(){
     clearPlayArea()
 }
 
-function clearPlayArea(){//TODO make to init grid info to dif field
-    // backBlocks = document.getElementsByClassName("backBlock")
-    // for (i = 0; i < backBlocks.length; i++){
-    //     backBlocks[i].innerHTML = ""
-    // }
+function clearPlayArea(){
     clearPlayer()
-}
-
-function onContinue(){
-    fetchElementValue("java.continue", 'codeArea').then(
-        response => processData(JSON.parse(response))
-    ).catch(
-        e => document.getElementById(elementId).value += "\nERROR : " + e
-    )
-    
-    scrollDown('outputArea')
 }
 
 function scrollDown(elementId){
@@ -85,12 +85,8 @@ timePromise = null
 async function processData(jsonData){
     if(jsonData != null){
         addText('outputArea', "\nPROG : ", jsonData["textData"])
-        if(!jsonData["endOfData"]){
-            //onContinue()
-        }
-
         playerMoves = jsonData["playerMoves"]
-        console.log(playerMoves)
+        //console.log(playerMoves)
         setPlayerPos(0, 0)
         for (i = 0; i < playerMoves.length; i++) {
             timePromise = sleep(550)
@@ -99,7 +95,7 @@ async function processData(jsonData){
                 return;
             }
             playerMove = playerMoves[i]
-            console.log(playerMove["actionName"]);
+            //console.log(playerMove["actionName"]);
             switch(playerMove["actionName"]){
                 case "move": movePlayer(playerMove["direction"]);break;
                 case "collectCoin": collectCoin(); break;
@@ -114,11 +110,11 @@ gY = 0
 xSize = 4
 backBlocks = document.getElementsByClassName("backBlock")
 player = document.createElement("div");
-player.id = "item"
+player.classList = "item"
 
 function collectCoin(){
     backBlocks[gX+gY*xSize].innerHTML = ""
-    player.classList = ""
+    clearPlayer();
     drawPlayer();
 }
 
@@ -129,6 +125,7 @@ function setPlayerPos(x, y){
     drawPlayer();
 }
 
+
 function movePlayer(direction){
     clearPlayer()
     x = direction["x"]
@@ -137,18 +134,18 @@ function movePlayer(direction){
     if(Math.abs(x)+Math.abs(y) > 0){
         if(Math.abs(x) > 0){
             if(x > 0){
-                player.classList = "moveRight"
+                player.classList.add("moveRight");
             }
             else{
-                player.classList = "moveLeft"
+                player.classList.add("moveLeft");
             }
         }
         else{
             if(y > 0){
-                player.classList = "moveDown"
+                player.classList.add("moveDown");
             }
             else{
-                player.classList = "moveUp"
+                player.classList.add("moveUp");
             }
         }
     }
@@ -159,7 +156,7 @@ function movePlayer(direction){
     gY += y
 }
 function clearPlayer(){
-    player.classList = ""
+    player.classList = "item"
     player.remove();
     //backBlocks[gX+gY*xSize].innerHTML = ""
 }

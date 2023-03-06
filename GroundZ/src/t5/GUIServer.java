@@ -18,7 +18,6 @@ import util.Utils;
 public class GUIServer{
 	private HttpServer server;
 	private CodeRunner jEngine;
-	private ArrayList<ServerPacket> packetList;
 	
 	public GUIServer() { this(8080);}
 	
@@ -34,7 +33,6 @@ public class GUIServer{
 	
 	public GUIServer(int port, String configPath, CodeRunner jEngine) {
 		this(port);
-		packetList = new ArrayList<ServerPacket>();
 		this.jEngine = jEngine;
 		server.createContext("/", httpExchange -> requestHandler(httpExchange));
 		server.setExecutor(null);
@@ -52,15 +50,7 @@ public class GUIServer{
 			packet.sendResponse(packet.getBytes());
 		}
 		else {
-			packetList.add(packet);
-			Utils.debug("Hi java"+packet.getResourceType());
-			if(packet.getResourceType().equals("run")) {
-				jEngine.handel(packet);
-			}
+			jEngine.handel(packet);
 		}
-	}
-	
-	public ArrayList<ServerPacket> getPacketList(){
-		return this.packetList;
 	}
 }
