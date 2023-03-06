@@ -203,7 +203,7 @@ public class Grid
 		
 		for (GameObject i :objectsNoBarriers)
 			{
-				System.out.println(i.getClass().getName());
+				
 				if(i.getClass().getName().contains("Coin") )
 					pngPath.add("Coin.png");
 				else if (i.getClass().getName().contains("Tunel")  &&  ((Tunel) i).isFacingSouth() == true)
@@ -216,7 +216,14 @@ public class Grid
 		
 		return pngPath;
 	}
-
+	
+	public ArrayList<Integer> size()
+	{
+		 ArrayList<Integer> size = new ArrayList<Integer>();
+		 size.add(width);
+		 size.add(height);
+		 return size;
+	}
 
 	@Override
 	public String toString() {

@@ -282,6 +282,7 @@ public class Player
 		default:
 			break;
 		}
+		actions.add(GameAction.rotate(90));
 	}
 	public void rotateLeft()
 	{
@@ -299,6 +300,7 @@ public class Player
 		default:
 			break;
 		}
+		actions.add(GameAction.rotate(-90));
 	}
 	
 	//____________________________________________________________________________________________________________________________

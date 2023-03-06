@@ -16,7 +16,7 @@ public class ConsoleMain {
 		Menu menu = new Menu();
 		// TODO Auto-generated method stu
 		Grid grid = new Grid(5,5);
-		System.out.println(grid.objectsToPng());
+		
 		Player player = new Player(new Vector2Df(1.0f,1.0f),grid);
 		//Player player1 = new Player(new Vector2Df(1.0f,1.0f),grid);
 		
