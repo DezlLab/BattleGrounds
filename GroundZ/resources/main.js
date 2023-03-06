@@ -2,7 +2,7 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "1.0"
+let appVersion = "1.1"
 
 function setup(){
     document.getElementById("header").innerHTML += appVersion
@@ -31,8 +31,19 @@ function setup(){
 
 function initGrid(jsonData){
     if(jsonData != null){
-        console.log(jsonData["endOfData"])
+        grid = jsonData["Grid"];
+        console.log(backBlocks, grid.length, grid)
+        for(i = 0; i < grid.length; i++){
+            if(grid[i] != null){
+                item = document.createElement("img");
+                item.classList = "item"
+                item.src = grid[i];
+
+                backBlocks[i].appendChild(item);
+            }
+        }
     }
+    processData(jsonData)
 }
 
 //OnClicks
