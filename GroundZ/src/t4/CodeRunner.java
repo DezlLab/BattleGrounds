@@ -79,7 +79,8 @@ public class CodeRunner {
 		run(null);
 		
 		JSONObject dataToSend = new JSONObject();
-		dataToSend.accumulate("Grid", grid.objectsToPng());
+		dataToSend.accumulate("grid", grid.objectsToPng());
+		dataToSend.accumulate("size", grid.size());
 		dataToSend.accumulate("endOfData", false);
 		dataToSend.accumulate("textData", clientSystem.stripString());
 
