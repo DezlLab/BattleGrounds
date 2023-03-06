@@ -13,6 +13,8 @@ import org.json.JSONObject;
 
 import codeSupport.CodeTransformer;
 import gameLogic.GameAction;
+import gameLogic.GroundZ;
+import t1.Grid;
 import t1.Player;
 import t1.Vector;
 import t1.Vector2Df;
@@ -35,27 +37,28 @@ public class CodeRunner {
 	
 	private Compilable compiler;
 	private CompiledScript compiledCode;
-	public Bindings bindings;
+	private Bindings bindings;
 	
-
+	private GroundZ groundZ;
+	private Grid grid;
 	private ArrayList<Vector> playerMoves ;
 
 	
 
-	public CodeRunner(ClientSystem clientSystem, Player player, boolean debug) {
+	public CodeRunner(ClientSystem clientSystem, Player player, boolean debug ,Grid grid) {
 		this.player = player;
-
+		this.grid = grid;
 		this.debug = debug;
 		this.codeSupportedLangs = new ArrayList<>();
 		this.clientSystem = clientSystem;
 		this.interpreter = new Interpreter();
-		player = new Player();
+		
 		playerMoves = new ArrayList<Vector>();
 		ScriptEngineManager manager = new ScriptEngineManager();
 	    ScriptEngine engine = manager.getEngineByName("java");
 	    compiler = (Compilable) engine;
 	    bindings = engine.createBindings();
-	    
+	    this.groundZ = groundZ;
 	    addSupportedLang("java");
 	    setSupportedLang("java");
 	    
@@ -80,7 +83,8 @@ public class CodeRunner {
 		dataToSend.accumulate("textData", clientSystem.stripString());
 
 		dataToSend.accumulate("playerMoves", player.getActions());
-		player.setPosition(new Vector2Df(1.0f,1.0f));
+		player.resetPlayer();
+		
 		packet.sendResponse(dataToSend.toString().getBytes());
 	}
 	

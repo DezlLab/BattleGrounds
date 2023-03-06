@@ -67,9 +67,9 @@ public class Vector2Di extends Vector{
 		this.y = xLimit.set(y);
 	}
 	
-	public float getX() { return x;}
+	public int getX() { return x;}
 
-	public float getY() { return y;}
+	public int getY() { return y;}
 
 	public Limiter getxLimit() { return xLimit;}
 	

@@ -16,7 +16,9 @@ public class Interpreter {
 		InterpreterPlan playGroundStyle = addInterpreterPlan("playGroundStyle");
 		playGroundStyle.addStatment("outer", "public class Main{\n"
 				+ "    public static void main() {");
+		
 		playGroundStyle.addConversion("print", "clientSystem.println");
+		playGroundStyle.addConversion("help()", "clientSystem.println(player.help())");
 		playGroundStyle.addStatment("end", "}}");
 	}
 	

@@ -65,7 +65,8 @@ public class Grid
 
 	public ArrayList<GameObject> getObjects() 
 	{
-		return objects;
+		
+		return (ArrayList<GameObject>) objects.clone();
 	}
 
 
@@ -99,6 +100,68 @@ public class Grid
 		addBarrier();
 	}
 	
+//	public ArrayList<Vector2Di> coinPosition()
+//	{
+//		ArrayList<Vector2Di> coinPos = new ArrayList<Vector2Di>();;
+//		int index = 0;
+//		for (GameObject i :objects)
+//		{
+//			index ++;
+//			if(i.getClass().getName()== "Coin" )
+//			{
+//				coinPos.add(positionToList(index));
+//			}
+//			
+//		}
+//		return coinPos;
+//		
+//	}
+//	
+//	public ArrayList<Vector2Di> tunelSouthPosition()
+//	{
+//		ArrayList<Vector2Di> coinPos = new ArrayList<Vector2Di>();;
+//		int index = 0;
+//		for (GameObject i :objects)
+//		{
+//			index ++;
+//			if(i.getClass().getName()== "Coin" )
+//			{
+//				coinPos.add(positionToList(index));
+//			}
+//			
+//		}
+//		return coinPos;
+//		
+//	}
+//	public ArrayList<Vector2Di> tunelWestPosition()
+//	{
+//		ArrayList<Vector2Di> coinPos = new ArrayList<Vector2Di>();;
+//		int index = 0;
+//		for (GameObject i :objects)
+//		{
+//			index ++;
+//			if(i.getClass().getName()== "Coin" )
+//			{
+//				coinPos.add(positionToList(index));
+//			}
+//			
+//		}
+//		return coinPos;
+//		
+//	}
+//	
+//	
+//	public Vector2Di positionToList(int index)
+//	{
+//		Vector2Di position = new  Vector2Di() ;
+//		
+//		if (index / width % 1 == 0)
+//			position.setY( (int)(index / width )  ); // pos = ((int) position.getY() ) *  grid.getWidth()  + (int)position.getX()  ;
+//		else
+//			position.setY( (int)(index / width +1)  );
+//		position.setX( index - (position.getY()-1 )* width );
+//		return position;
+//	}
 	
 	public void addBarrier()
 	{

@@ -20,7 +20,7 @@ public class ConsoleMain {
 		Player player = new Player(new Vector2Df(1.0f,1.0f),grid);
 		//Player player1 = new Player(new Vector2Df(1.0f,1.0f),grid);
 		
-		player.setPin(43);
+//		player.setPin(43);
 		//System.out.println(player1.getPin());
 		
 		
@@ -55,14 +55,17 @@ public class ConsoleMain {
 			} catch (NoSuchMethodException | SecurityException e) {
 			
 			}
+			if(!i.contains("help"))
+			{
 			clearScreen();
-			 System.out.println(player);
-			 try {
-				TimeUnit.MILLISECONDS.sleep(500);;
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			System.out.println(player);
 			}
+//			 try {
+//				TimeUnit.MILLISECONDS.sleep(500);;
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 		}	
 			
 			 
