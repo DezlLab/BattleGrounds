@@ -3,6 +3,7 @@ package t1;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.spi.FileSystemProvider;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -42,30 +43,74 @@ public class ConsoleMain {
 //				}
 			
 		for( String i : name)
-		{ 
-			i = i.replaceAll("\\(\\)", "");
-			//System.out.println(i);
-			try {
-				method = player.getClass().getMethod(i);
-				try {
-					method.invoke(player);
-				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					
-				}
-			} catch (NoSuchMethodException | SecurityException e) {
+		{ 	
 			
+			String[] methodParts = i.split("\\(");
+			
+			//methodParts[1] = i.replaceAll("\\(\\)", "");
+			
+//			System.out.println(i);
+//			System.out.println(methodParts[0]);
+//			System.out.println(methodParts[1]);
+			if (methodParts.length != 2 )
+			{
+			try {
+				try {
+					player.getClass().getMethod(methodParts[0]).invoke(player);
+				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				};
+				
+				}
+				catch (NoSuchMethodException | SecurityException e) {
+				}
+			}
+			else 
+			{
+				methodParts[1] = methodParts[1].replaceAll("\\)", "");
+				methodParts[1] = methodParts[1].replaceAll("\\(\\)", "");
+				if (methodParts[1] == "")
+				{
+					try {
+						try {
+							player.getClass().getMethod(methodParts[0]).invoke(player);
+						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						};
+						
+						}
+						catch (NoSuchMethodException | SecurityException e) {
+						}
+				}
+				else
+				{
+					try {
+						try {
+							player.getClass().getMethod(methodParts[0],int.class).invoke(player,Integer.parseInt(methodParts[1]));
+						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						};
+						
+						}
+					 catch (NoSuchMethodException | SecurityException e) {
+					 
+					 }
+				}
 			}
 			if(!i.contains("help"))
 			{
 			clearScreen();
 			System.out.println(player);
 			}
-//			 try {
-//				TimeUnit.MILLISECONDS.sleep(500);;
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			 try {
+				TimeUnit.MILLISECONDS.sleep(500);;
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}	
 			
 			 

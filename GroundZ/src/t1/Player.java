@@ -2,6 +2,7 @@ package t1;
 
 import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 import t4.CodeRunner;
@@ -69,40 +70,6 @@ public class Player
 	}
 	
 
-//	public void down()
-//		{
-//		goveDown();
-//		if( lastDestination.compare(position) )
-//			actions.add(GameAction.move(Vector.down()));
-//		else
-//			actions.add(GameAction.move(Vector.zero()));
-//		}
-//	public void up()
-//		{
-//		goveUp();
-//
-//		if( lastDestination.compare(position) )
-//			actions.add(GameAction.move(Vector.up()));
-//		else
-//			actions.add(GameAction.move(Vector.zero()));
-//		}
-//	public void left()
-//		{
-//		goveLeft();
-//		if( lastDestination.compare(position) )
-//			actions.add(GameAction.move(Vector.left()));
-//		else
-//			actions.add(GameAction.move(Vector.zero()));
-//		}
-//	public void right()
-//		{
-//		goveRight();
-//		if( lastDestination.compare(position) )
-//			actions.add(GameAction.move(Vector.right()));
-//		else
-//			actions.add(GameAction.move(Vector.zero()));
-//		}
-//	public void colCoin() {actions.add(GameAction.collectCoin());}
 	
 	public ArrayList<GameAction> getActions() {
 		System.out.println(actions);
@@ -172,7 +139,74 @@ public class Player
 		default:break;
 		}
 	}
+	public void moveForward(int times)
+	{
+		for(int i = 0; i < times ; i++)
+		{
+			switch (rotation) {
+			case "Left":
+				goveLeft();break;
+			case "Right":
+				goveRight();break;
+			case "Down":
+				goveDown();break;
+			case "Up":goveUp();break;
+			default:break;
+		}
+		}
+	}
+	public void moveBack(int times)
+	{
+		for(int i = 0; i < times ; i++)
+		{
+			switch (rotation) {
+			case "Left":
+				goveRight();break;			
+			case "Right":
+				goveLeft();break;
+			case "Down":
+				goveUp();break;
+			case "Up":
+				goveDown();break;
+			default:break;
+			}
+		}
+	}
+	public void moveLeft(int times)
+	{
+		for(int i = 0; i < times ; i++)
+		{
+			switch (rotation) {
+			case "Left":
+				goveDown();break;
+			case "Right":
+				goveUp();break;
+			case "Down":
+				goveRight();break;
+			case "Up":
+				goveLeft();break;
+			default:break;
+			}
+		}
+	}
 	
+	public void moveRight(int times)
+	{
+		for(int i = 0; i < times ; i++)
+		{
+			switch (rotation) {
+			case "Left":
+				goveUp();break;
+			case "Right":
+				goveDown();break;
+			case "Down":
+				goveLeft();break;
+			case "Up":
+				goveRight();break;
+			default:break;
+			}
+		}
+	}
 	private void goveUp()
 	{
 		if (map.get(destinationToList()).canLeave("South"))
@@ -301,6 +335,47 @@ public class Player
 			break;
 		}
 		actions.add(GameAction.rotate(-90));
+	}
+	public void rotateRight(int times)
+	{
+		for(int i = 0; i < times ; i++)
+		{
+		switch (rotation) {
+		case "Up":rotation="Right";
+		look = "►";
+		break;
+		case "Right": rotation="Down";
+		look = "▼";break;
+		case "Down": rotation="Left";
+		look = "◄";break;
+		case "Left": rotation="Up";
+		look = "▲";break;
+		default:
+			break;
+		}
+		actions.add(GameAction.rotate(90));
+		}
+	}
+	public void rotateLeft(int times)
+	{
+		for(int i = 0; i < times ; i++)
+		{
+		switch (rotation) {
+		case "Down":rotation="Right";
+		look = "►";
+		break;
+		case "Left": rotation="Down";
+		look = "▼";break;
+		case "Up": 
+			rotation="Left";
+		look = "◄";break;
+		case "Right": rotation="Up";
+		look = "▲";break;
+		default:
+			break;
+		}
+		actions.add(GameAction.rotate(-90));
+		}
 	}
 	
 	//____________________________________________________________________________________________________________________________
