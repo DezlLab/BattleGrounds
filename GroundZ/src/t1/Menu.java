@@ -10,8 +10,7 @@ public class Menu
 	}
 
 	public String toString() {
-		return "\t\t> Select Level <"
-			+ "\t\t  Random Map ";
+		return "";
 	}
 			
 }
