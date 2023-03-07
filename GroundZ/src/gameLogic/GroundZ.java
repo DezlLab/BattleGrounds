@@ -18,7 +18,7 @@ public class GroundZ {
 	private Grid grid ;
 	public GroundZ() {
 		grid = new Grid(5,4);
-		newPlayer();
+		player = new Player(new Vector2Df(1.0f,1.0f),grid);
 		
 		ClientSystem clientSystem = new ClientSystem();
 		String[] clientArgs = {"Luca", "Theo"};
@@ -26,13 +26,16 @@ public class GroundZ {
 		jEngine.setVar("clientSystem", clientSystem);
 		jEngine.setVar("player", player);
 		jEngine.setVar("args", clientArgs);
-		GUIServer gui = new GUIServer(8989, "resources/config.json", jEngine);
+		GUIServer gui = new GUIServer(8989, "resources/config.json", jEngine, this);
 	}
+	
 	public void newPlayer()
 	{
-		System.out.println("NEw Pläayor");
 		player = new Player(new Vector2Df(1.0f,1.0f),grid);
 	}
 	
+	public void newGrid() {
+		grid.newRandomGrid();
+	}
 }
 

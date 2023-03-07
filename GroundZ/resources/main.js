@@ -13,8 +13,8 @@ function setup(){
     ).catch(
         e => document.getElementById('outputArea').value += "\nERROR : " + e
     )
-
     
+    document.getElementById("runButton").disabled = false
 
     var seperators = document.getElementsByClassName("splitter")
     for(var i = 0; i < seperators.length; i++){
@@ -30,12 +30,13 @@ function setup(){
 }
 
 function initGrid(jsonData){
+    console.log("init Grid");
     if(jsonData != null){
         document.getElementById("playArea").innerHTML = ""
         console.log(jsonData["size"][0]);
-        document.documentElement.style.setProperty("--gridX", jsonData["size"][1] -2)
-        document.documentElement.style.setProperty("--gridY", jsonData["size"][0] -2)
-        xSize = jsonData["size"][0] -2
+        document.documentElement.style.setProperty("--gridX", jsonData["size"][1])
+        document.documentElement.style.setProperty("--gridY", jsonData["size"][0])
+        xSize = jsonData["size"][0]
         document.styleSheets.set
         grid = jsonData["grid"];
         console.log(backBlocks, grid.length, grid)
@@ -76,19 +77,35 @@ function onRun(){
     
     scrollDown('outputArea')
     clearPlayArea()
+    toggleRunButton();
+}
+
+function toggleRunButton(){
+    document.getElementById("runButton").disabled = !document.getElementById("runButton").disabled
 }
 
 function onClr(){
+    
     timePromise = "done"
     console.log("sd")
     document.getElementById('outputArea').value = "GroundZ by Luca P. and Theo L. " + appVersion
     clearPlayArea()
+    coins = 0
+    document.getElementById("coinLabel").innerText = "collected Coins : " + coins
 
     fetchElementValue("java.setup", 'metaSetup').then(
         response => initGrid(JSON.parse(response))
     ).catch(
         e => document.getElementById('outputArea').value += "\nERROR : " + e
     )
+    toggleRunButton();
+}
+
+function onNewGrid(){
+    fetchElementValue("java.newGrid", 'metaSetup').catch(
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
+    )
+    onClr();
 }
 
 function clearPlayArea(){
@@ -155,9 +172,12 @@ player.classList = "item"
 player.src = "Player.png"
 player.style.zIndex = 20
 
+coins = 0
 function collectCoin(){
     if(backBlocks[gX+gY*xSize].children[0].id == "toCollect"){
         backBlocks[gX+gY*xSize].innerHTML = ""
+        coins++;
+        document.getElementById("coinLabel").innerText = "collected Coins : " + coins
     }
     clearPlayer();
     drawPlayer();

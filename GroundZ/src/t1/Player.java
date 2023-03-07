@@ -79,7 +79,7 @@ public class Player
 	public String help()
 	{
 		System.out.println("Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\n");
-		return "Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\n";
+		return "Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. moveForward(3);\n";
 	}
 	//Console 
 	public void moveForward()

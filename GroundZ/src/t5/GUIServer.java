@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 
+import gameLogic.GroundZ;
 import t1.Grid;
 import t1.Player;
 import t1.Vector2Df;
@@ -18,6 +19,7 @@ import util.Utils;
 public class GUIServer{
 	private HttpServer server;
 	private CodeRunner jEngine;
+	private GroundZ groundZ;
 	
 	public GUIServer() { this(8080);}
 	
@@ -31,8 +33,10 @@ public class GUIServer{
 		}
 	}
 	
-	public GUIServer(int port, String configPath, CodeRunner jEngine) {
+	public GUIServer(int port, String configPath, CodeRunner jEngine, GroundZ groundZ) {
 		this(port);
+		this.groundZ = groundZ;
+		
 		this.jEngine = jEngine;
 		server.createContext("/", httpExchange -> requestHandler(httpExchange));
 		server.setExecutor(null);
@@ -50,6 +54,9 @@ public class GUIServer{
 			packet.sendResponse(packet.getBytes());
 		}
 		else {
+			if(packet.getResourceType().equals("newGrid")) {
+				groundZ.newGrid();
+			}
 			jEngine.handel(packet);
 		}
 	}
