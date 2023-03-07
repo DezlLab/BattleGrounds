@@ -23,7 +23,7 @@ public class GameAction {
 	}
 	
 	public static GameAction rotate(int deg) {
-		return new GameAction("rotate", (new Vector2Di((int)(Math.cos(deg)), (int)(Math.cos(deg)))));
+		return new GameAction("rotate", (new Vector2Di(deg, 0)));
 	}
 	
 	public String getActionName() {

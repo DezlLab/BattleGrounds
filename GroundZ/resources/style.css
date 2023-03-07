@@ -51,6 +51,7 @@
 	border-radius: 5%;
 	position: absolute;
 	margin: 0 0 auto;
+
 	transform: translate(-50%, -50%);
 	top: 50%;
 	left: 50%;
@@ -65,12 +66,11 @@
 	position: absolute;
 	height: calc(100% / var(--playAreaBlocks) - 10px);
 	width: calc(100% / var(--playAreaBlocks) - 10px);
-	transform: scale(1.0);
+	/*transform: scale(1.0);*/
 	transition: 0.5s;
-	animation-duration: 0.6s;
+	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 }
-
 .moveLeft{
 	animation-name: left;
 }

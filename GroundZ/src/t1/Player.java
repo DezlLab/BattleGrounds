@@ -362,6 +362,10 @@ public class Player
 	public void resetPlayer()
 	{
 		position = new Vector2Df(1f,1f);
+		destination.setX(position.getX());
+		destination.setY(position.getY());
 		map = grid.getObjects();
+		rotation = "Up";
+		look = "▲";
 	}
 }

@@ -38,7 +38,9 @@ function initGrid(jsonData){
                 item = document.createElement("img");
                 item.classList = "item"
                 item.src = grid[i];
-
+                if(grid[i] == "Coin.png"){
+                    item.id = "toCollect"
+                }
                 backBlocks[i].appendChild(item);
             }
         }
@@ -110,8 +112,10 @@ async function processData(jsonData){
         playerMoves = jsonData["playerMoves"]
         //console.log(playerMoves)
         setPlayerPos(0, 0)
+        gRot = 0
+        player.style.transform = '';
         for (i = 0; i < playerMoves.length; i++) {
-            timePromise = sleep(550)
+            timePromise = sleep(750)
             await timePromise
             if(timePromise == "done"){
                 return;
@@ -121,6 +125,7 @@ async function processData(jsonData){
             switch(playerMove["actionName"]){
                 case "move": movePlayer(playerMove["direction"]);break;
                 case "collectCoin": collectCoin(); break;
+                case "rotate": rotatePlayer(playerMove["direction"]); break;
             }
         }
     }
@@ -129,13 +134,18 @@ async function processData(jsonData){
 
 gX = 0
 gY = 0
+gRot = 0
 xSize = 4
 backBlocks = document.getElementsByClassName("backBlock")
 player = document.createElement("img");
 player.classList = "item"
 player.src = "Player.png"
+player.style.zIndex = 20
+
 function collectCoin(){
-    backBlocks[gX+gY*xSize].innerHTML = ""
+    if(backBlocks[gX+gY*xSize].children[0].id == "toCollect"){
+        backBlocks[gX+gY*xSize].innerHTML = ""
+    }
     clearPlayer();
     drawPlayer();
 }
@@ -147,6 +157,11 @@ function setPlayerPos(x, y){
     drawPlayer();
 }
 
+function rotatePlayer(direction){
+    gRot += -direction["x"];
+    console.log(gRot)
+    player.style.transform += 'rotate('+direction["x"]+'deg)';
+}
 
 function movePlayer(direction){
     clearPlayer()
@@ -156,28 +171,36 @@ function movePlayer(direction){
     if(Math.abs(x)+Math.abs(y) > 0){
         if(Math.abs(x) > 0){
             if(x > 0){
-                player.classList.add("moveRight");
+                //player.classList.add("moveRight");
+                //player.style.transform += gRot;
             }
             else{
-                player.classList.add("moveLeft");
+                //player.classList.add("moveLeft");
+                //player.style.transform += gRot;
             }
         }
         else{
             if(y > 0){
-                player.classList.add("moveDown");
+                //player.classList.add("moveDown");
+                //player.style.transform += gRot;
+                //player.style.transform += 'rotate('+(gRot+270)+'deg)';
+                console.log(player.style.transform)
             }
             else{
-                player.classList.add("moveUp");
+                //player.classList.add("moveUp");
+                //player.style.transform += gRot;
             }
         }
     }
     
-    console.log(player.classList)
-    drawPlayer();
+    //console.log(player.classList)
+    
     gX += x
     gY += y
+    drawPlayer();
 }
 function clearPlayer(){
+    //player.style.transform = ""
     player.classList = "item"
     player.remove();
     //backBlocks[gX+gY*xSize].innerHTML = ""
