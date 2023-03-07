@@ -2,7 +2,7 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "1.0"
+let appVersion = "1.2"
 
 function setup(){
     document.getElementById("header").innerHTML += appVersion
@@ -31,12 +31,28 @@ function setup(){
 
 function initGrid(jsonData){
     if(jsonData != null){
-        console.log(jsonData["endOfData"])
+        grid = jsonData["grid"];
+        console.log(backBlocks, grid.length, grid)
+        for(i = 0; i < grid.length; i++){
+            if(grid[i] != null){
+                item = document.createElement("img");
+                item.classList = "item"
+                item.src = grid[i];
+
+                backBlocks[i].appendChild(item);
+            }
+        }
     }
+    processData(jsonData)
 }
 
 //OnClicks
 function onRun(){
+    fetchElementValue("java.setup", 'metaSetup').then(
+        response => initGrid(JSON.parse(response))
+    ).catch(
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
+    )
     fetchElementValue("java.run", 'codeArea').then(
         response => processData(JSON.parse(response))
     ).catch(
@@ -52,6 +68,12 @@ function onClr(){
     console.log("sd")
     document.getElementById('outputArea').value = "GroundZ by Luca P. and Theo L. " + appVersion
     clearPlayArea()
+
+    fetchElementValue("java.setup", 'metaSetup').then(
+        response => initGrid(JSON.parse(response))
+    ).catch(
+        e => document.getElementById('outputArea').value += "\nERROR : " + e
+    )
 }
 
 function clearPlayArea(){
@@ -109,9 +131,9 @@ gX = 0
 gY = 0
 xSize = 4
 backBlocks = document.getElementsByClassName("backBlock")
-player = document.createElement("div");
+player = document.createElement("img");
 player.classList = "item"
-
+player.src = "Player.png"
 function collectCoin(){
     backBlocks[gX+gY*xSize].innerHTML = ""
     clearPlayer();

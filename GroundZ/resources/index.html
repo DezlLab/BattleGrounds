@@ -22,22 +22,13 @@
         <div class="Edit">
             <div id = "wrapper">
                 <textarea id = "codeArea" spellcheck = "false">
-
-player.down();
-player.down();
-player.down();
-player.down();
-player.right();
-player.right();
-player.right();
-player.up();
-player.up();
-player.up();
-player.left();
-player.left();
-player.left();
-player.colCoin();
-                    
+player.moveBack();
+player.moveRight();
+player.moveLeft();
+player.moveBack();
+player.moveForward();
+player.collectCoin();
+print(player.toString());                    
                 </textarea>
             </div>
             <div id="Y" class="splitter splt_Y0"></div>
@@ -45,10 +36,10 @@ player.colCoin();
                 <button onclick="onRun()">Run</button>
                 <button onclick="onClr()">Clear</button>
                 <div id = "playArea">
-                    <div class="backBlock"><div class="item" style="background-color: ff5;"></div></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
                     <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
                     <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
-                    <div class="backBlock"><div class="block"></div></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
+                    <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
+                    <div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div><div class="backBlock"></div>
                     
                 </div>
             </div>

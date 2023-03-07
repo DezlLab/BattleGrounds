@@ -1,10 +1,10 @@
 package t1;
 
-public class Tunel extends GameObject{
+public class Tunnel extends GameObject{
 	
 	private boolean facingSouth;
 		
-	public Tunel(boolean facingSouth) {
+	public Tunnel(boolean facingSouth) {
 		this.facingSouth = facingSouth;
 		setLook();
 	}
