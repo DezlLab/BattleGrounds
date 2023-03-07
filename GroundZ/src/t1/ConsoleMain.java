@@ -14,19 +14,10 @@ public class ConsoleMain {
 	
 	public static void main(String[] args) 
 	{
-		Menu menu = new Menu();
-		// TODO Auto-generated method stu
 		Grid grid = new Grid(5,5);
 		
 		Player player = new Player(new Vector2Df(1.0f,1.0f),grid);
-		//Player player1 = new Player(new Vector2Df(1.0f,1.0f),grid);
-		
-//		player.setPin(43);
-		//System.out.println(player1.getPin());
-		
-		
-		System.out.println(menu);
-		
+	
 		System.out.println(player);
 		Scanner eingabe = new Scanner(System.in); 
 		

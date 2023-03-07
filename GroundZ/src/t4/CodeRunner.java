@@ -10,20 +10,13 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import org.json.JSONObject;
-
-import codeSupport.CodeTransformer;
-import gameLogic.GameAction;
 import gameLogic.GroundZ;
 import t1.Grid;
 import t1.Player;
 import t1.Vector;
-import t1.Vector2Df;
-import t1.Vector2Di;
 import t5.ClientSystem;
-import t5.GUIServer;
 import t5.ServerPacket;
 import util.Utils;
-import t1.Player;
 public class CodeRunner {
 	
 	private boolean debug;

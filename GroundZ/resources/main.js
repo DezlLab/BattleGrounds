@@ -2,7 +2,7 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "1.2"
+let appVersion = "1.3"
 
 function setup(){
     document.getElementById("header").innerHTML += appVersion
@@ -31,8 +31,21 @@ function setup(){
 
 function initGrid(jsonData){
     if(jsonData != null){
+        document.getElementById("playArea").innerHTML = ""
+        console.log(jsonData["size"][0]);
+        document.documentElement.style.setProperty("--gridX", jsonData["size"][1] -2)
+        document.documentElement.style.setProperty("--gridY", jsonData["size"][0] -2)
+        xSize = jsonData["size"][0] -2
+        document.styleSheets.set
         grid = jsonData["grid"];
         console.log(backBlocks, grid.length, grid)
+        backBlocks = []
+        for(i = 0; i < grid.length; i++){
+            backBlock = document.createElement("div")
+            backBlock.classList = "backBlock"
+            backBlocks.push(backBlock);
+            document.getElementById("playArea").appendChild(backBlock);
+        }
         for(i = 0; i < grid.length; i++){
             if(grid[i] != null){
                 item = document.createElement("img");
@@ -108,7 +121,7 @@ function getText(elementId){
 timePromise = null
 async function processData(jsonData){
     if(jsonData != null){
-        addText('outputArea', "\nPROG : ", jsonData["textData"])
+        addText('outputArea', "\nOutput : ", jsonData["textData"])
         playerMoves = jsonData["playerMoves"]
         //console.log(playerMoves)
         setPlayerPos(0, 0)
@@ -158,9 +171,9 @@ function setPlayerPos(x, y){
 }
 
 function rotatePlayer(direction){
-    gRot += -direction["x"];
+    gRot += direction["x"];
     console.log(gRot)
-    player.style.transform += 'rotate('+direction["x"]+'deg)';
+    player.style.transform = 'rotate('+gRot+'deg) translate(0, 0)';
 }
 
 function movePlayer(direction){
@@ -184,6 +197,7 @@ function movePlayer(direction){
                 //player.classList.add("moveDown");
                 //player.style.transform += gRot;
                 //player.style.transform += 'rotate('+(gRot+270)+'deg)';
+                //player.style.transform = 'rotate('+gRot+'deg) translate(0, -100%)';
                 console.log(player.style.transform)
             }
             else{

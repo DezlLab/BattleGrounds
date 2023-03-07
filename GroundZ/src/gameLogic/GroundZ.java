@@ -17,7 +17,7 @@ public class GroundZ {
 	private Player player;
 	private Grid grid ;
 	public GroundZ() {
-		grid = new Grid(4,4);
+		grid = new Grid(5,4);
 		newPlayer();
 		
 		ClientSystem clientSystem = new ClientSystem();
@@ -33,5 +33,6 @@ public class GroundZ {
 		System.out.println("NEw Pläayor");
 		player = new Player(new Vector2Df(1.0f,1.0f),grid);
 	}
+	
 }
 
