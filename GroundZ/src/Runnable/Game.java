@@ -1,4 +1,6 @@
-package gameLogic;
+package Runnable;
+
+import gameLogic.GroundZ;
 
 public class Game 
 {

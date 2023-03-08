@@ -1,11 +1,8 @@
+
+
 package t1;
 
-import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
-
-import t4.CodeRunner;
 
 
 import gameLogic.GameAction;
@@ -71,15 +68,14 @@ public class Player
 
 	
 	public ArrayList<GameAction> getActions() {
-		System.out.println(actions);
 		ArrayList<GameAction> res = actions;
 		actions = new ArrayList<GameAction>();
 		return res;
 	}
 	public String help()
 	{
-		System.out.println("Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\n");
-		return "Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. moveForward(3);\n";
+		System.out.println("Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. moveForward(3);\n");
+		return "Mögliche Commands: \n\nplayer.moveForward()\nplayer.moveBack()\nplayer.moveRight()\nplayer.moveLeft()\nplayer.rotateRight()\nplayer.rotateLeft()\nplayer.collectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. moveForward(3);\n";
 	}
 	//Console 
 	public void moveForward()
@@ -208,75 +204,97 @@ public class Player
 	}
 	private void goveUp()
 	{
-		if (map.get(destinationToList()).canLeave("South"))
-		{
-		destination.setY(position.getY()-1);
-		lastDestination.setX(destination.getX());
-		lastDestination.setY(destination.getY());
-		if (map.get(destinationToList()).canEnter("South"))
-			position.setY(destination.getY());
-		else
+		boolean addZero = true;
+		if (map.get(destinationToList()).canLeave("South")) {
+			destination.setY(position.getY()-1);
+			if (map.get(destinationToList()).canEnter("South")) {
+				position.setY(destination.getY());
+				actions.add(GameAction.move(Vector.up()));
+				addZero = false;
+			}
 			destination.setY(position.getY());
-		
 		}
-		if( lastDestination.compare(position) )
-			actions.add(GameAction.move(Vector.up()));
-		else
-			actions.add(GameAction.move(Vector.zero()));
 		
+		if(addZero){
+			actions.add(GameAction.move(Vector.zero()));
+		}		
 	}
 	
 
 	private void goveDown()
 	{
-		if (map.get(destinationToList()).canLeave("North"))
-		{
-		destination.setY(position.getY()+1);
-		lastDestination.setX(destination.getX());
-		lastDestination.setY(destination.getY());
-		if (map.get(destinationToList()).canEnter("North"))
-			position.setY(destination.getY());
-		else
+		boolean addZero = true;
+		if (map.get(destinationToList()).canLeave("North")) {
+			destination.setY(position.getY()+1);
+			if (map.get(destinationToList()).canEnter("North")) {
+				position.setY(destination.getY());
+				actions.add(GameAction.move(Vector.down()));
+				addZero = false;
+			}
 			destination.setY(position.getY());
 		}
-		if( lastDestination.compare(position) )
-			actions.add(GameAction.move(Vector.down()));
-		else
+		
+		if(addZero){
 			actions.add(GameAction.move(Vector.zero()));
+		}
 	}
+	
 	private void goveLeft()
 	{
-		if (map.get(destinationToList()).canLeave("East"))
-		{
-		destination.setX(position.getX()-1);
-		lastDestination.setX(destination.getX());
-		lastDestination.setY(destination.getY());
-		if (map.get(destinationToList()).canEnter("East"))
-			position.setX(destination.getX());	
-		else
+		boolean addZero = true;
+		if (map.get(destinationToList()).canLeave("East")) {
+			destination.setX(position.getX()-1);
+			if (map.get(destinationToList()).canEnter("East")) {
+				position.setX(destination.getX());
+				actions.add(GameAction.move(Vector.left()));
+				addZero = false;
+			}
 			destination.setX(position.getX());
 		}
-		if( lastDestination.compare(position) )
-			actions.add(GameAction.move(Vector.left()));
-		else
+		
+		if(addZero){
 			actions.add(GameAction.move(Vector.zero()));
+		}
 	}
+	
 	private void goveRight()
 	{
-		if (map.get(destinationToList()).canLeave("West"))
-		{
-		destination.setX(position.getX()+1);
-		lastDestination.setX(destination.getX());
-		lastDestination.setY(destination.getY());
-		if (map.get(destinationToList()).canEnter("West"))
-			position.setX(destination.getX());	
-		else
+		boolean addZero = true;
+		if (map.get(destinationToList()).canLeave("West")) {
+			destination.setX(position.getX()+1);
+			if (map.get(destinationToList()).canEnter("West")) {
+				position.setX(destination.getX());
+				actions.add(GameAction.move(Vector.right()));
+				addZero = false;
+			}
 			destination.setX(position.getX());
-		}	
-		if( lastDestination.compare(position) )
-			actions.add(GameAction.move(Vector.right()));
-		else
+		}
+		
+		if(addZero){
 			actions.add(GameAction.move(Vector.zero()));
+		}
+//		if (map.get(destinationToList()).canLeave("West"))
+//		{
+//		destination.setX(position.getX()+1);
+//		lastDestination.setX(destination.getX());
+//		lastDestination.setY(destination.getY());
+//		if (map.get(destinationToList()).canEnter("West")) {
+//			position.setX(destination.getX());
+//			System.out.println("==move right==");
+//		}
+//		else {
+//			destination.setX(position.getX());
+//			System.out.println("==cant move right==");
+//		}
+//		}	
+//		if( lastDestination.compare(position) ) {
+//			System.out.println("=addRight=");
+//			actions.add(GameAction.move(Vector.right()));
+//		}
+//		else {
+//			actions.add(GameAction.move(Vector.zero()));
+//			System.out.println("=addZero=");
+//		}
 	}
 	public void collectCoin()
 	{
@@ -286,7 +304,6 @@ public class Player
 			coins ++;
 		}
 		actions.add(GameAction.collectCoin());
-		System.out.println("Grid : " +grid);
 	}
 	
 //	private void delay()
@@ -395,7 +412,6 @@ public class Player
 	}
 	
 	public String toString() {
-		
 		String gridTranslation = "\n\n\n    ";
 		int slpitCount = 0;
 		int rowCount = 0;

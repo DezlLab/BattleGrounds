@@ -2,17 +2,11 @@
 ////By Luca P. and Theo L. no License///
 //
 //Version
-let appVersion = "1.3"
+let appVersion = "1.35"
 
 function setup(){
     document.getElementById("header").innerHTML += appVersion
     onClr()
-
-    fetchElementValue("java.setup", 'metaSetup').then(
-        response => initGrid(JSON.parse(response))
-    ).catch(
-        e => document.getElementById('outputArea').value += "\nERROR : " + e
-    )
     
     document.getElementById("runButton").disabled = false
 
@@ -33,13 +27,11 @@ function initGrid(jsonData){
     console.log("init Grid");
     if(jsonData != null){
         document.getElementById("playArea").innerHTML = ""
-        console.log(jsonData["size"][0]);
         document.documentElement.style.setProperty("--gridX", jsonData["size"][1])
         document.documentElement.style.setProperty("--gridY", jsonData["size"][0])
-        xSize = jsonData["size"][0]
+        ySize = jsonData["size"][0]
         document.styleSheets.set
         grid = jsonData["grid"];
-        console.log(backBlocks, grid.length, grid)
         backBlocks = []
         for(i = 0; i < grid.length; i++){
             backBlock = document.createElement("div")
@@ -64,7 +56,7 @@ function initGrid(jsonData){
 
 //OnClicks
 function onRun(){
-    fetchElementValue("java.setup", 'metaSetup').then(
+    fetchElementValue("java.getGrid", 'metaSetup').then(
         response => initGrid(JSON.parse(response))
     ).catch(
         e => document.getElementById('outputArea').value += "\nERROR : " + e
@@ -77,28 +69,24 @@ function onRun(){
     
     scrollDown('outputArea')
     clearPlayArea()
-    toggleRunButton();
+    document.getElementById("runButton").disabled = true
 }
 
-function toggleRunButton(){
-    document.getElementById("runButton").disabled = !document.getElementById("runButton").disabled
-}
 
 function onClr(){
     
     timePromise = "done"
-    console.log("sd")
     document.getElementById('outputArea').value = "GroundZ by Luca P. and Theo L. " + appVersion
     clearPlayArea()
     coins = 0
     document.getElementById("coinLabel").innerText = "collected Coins : " + coins
 
-    fetchElementValue("java.setup", 'metaSetup').then(
+    fetchElementValue("java.getGrid", 'metaSetup').then(
         response => initGrid(JSON.parse(response))
     ).catch(
         e => document.getElementById('outputArea').value += "\nERROR : " + e
     )
-    toggleRunButton();
+    document.getElementById("runButton").disabled = false
 }
 
 function onNewGrid(){
@@ -165,7 +153,7 @@ async function processData(jsonData){
 gX = 0
 gY = 0
 gRot = 0
-xSize = 4
+ySize = 4
 backBlocks = document.getElementsByClassName("backBlock")
 player = document.createElement("img");
 player.classList = "item"
@@ -174,8 +162,8 @@ player.style.zIndex = 20
 
 coins = 0
 function collectCoin(){
-    if(backBlocks[gX+gY*xSize].children[0].id == "toCollect"){
-        backBlocks[gX+gY*xSize].innerHTML = ""
+    if(backBlocks[gX+gY*ySize].children[0].id == "toCollect"){
+        backBlocks[gX+gY*ySize].innerHTML = ""
         coins++;
         document.getElementById("coinLabel").innerText = "collected Coins : " + coins
     }
@@ -192,7 +180,7 @@ function setPlayerPos(x, y){
 
 function rotatePlayer(direction){
     gRot += direction["x"];
-    console.log(gRot)
+    //console.log(gRot)
     player.style.transform = 'rotate('+gRot+'deg) translate(0, 0)';
 }
 
@@ -200,7 +188,7 @@ function movePlayer(direction){
     clearPlayer()
     x = direction["x"]
     y = direction["y"]
-    console.log(x,y)
+    //console.log(x,y)
     if(Math.abs(x)+Math.abs(y) > 0){
         if(Math.abs(x) > 0){
             if(x > 0){
@@ -218,7 +206,7 @@ function movePlayer(direction){
                 //player.style.transform += gRot;
                 //player.style.transform += 'rotate('+(gRot+270)+'deg)';
                 //player.style.transform = 'rotate('+gRot+'deg) translate(0, -100%)';
-                console.log(player.style.transform)
+                //console.log(player.style.transform)
             }
             else{
                 //player.classList.add("moveUp");
@@ -240,7 +228,7 @@ function clearPlayer(){
     //backBlocks[gX+gY*xSize].innerHTML = ""
 }
 function drawPlayer(){
-    backBlocks[gX+gY*xSize].appendChild(player)
+    backBlocks[gX+gY*ySize].appendChild(player)
 }
 
 function sleep(ms) {

@@ -1,4 +1,4 @@
-package t1;
+package Runnable;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+
+import t1.Grid;
+import t1.Player;
+import t1.Vector2Df;
 
 public class ConsoleMain {
 	

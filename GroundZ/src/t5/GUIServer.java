@@ -55,7 +55,10 @@ public class GUIServer{
 		}
 		else {
 			if(packet.getResourceType().equals("newGrid")) {
-				groundZ.newGrid();
+				groundZ.sendGrid(packet, true);
+			}
+			if(packet.getResourceType().equals("getGrid")) {
+				groundZ.sendGrid(packet, false);
 			}
 			jEngine.handel(packet);
 		}

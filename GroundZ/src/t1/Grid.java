@@ -1,3 +1,5 @@
+
+
 package t1;
 
 import java.util.ArrayList;
@@ -9,8 +11,8 @@ public class Grid
 	private int width;
 	private ArrayList<GameObject> objects;
 	private ArrayList<GameObject> objectsNoBarriers;
-	
-	
+	private int widthWithBarrier;
+	private int heightWithBarrier;
 	
 	//						width  height  
 	private int[] Level1 = {1     ,1     ,};
@@ -29,32 +31,32 @@ public class Grid
 
 
 	public int getHeight() {
-		return height;
+		return this.heightWithBarrier;
 	}
 
 
 
 	public void setHeight(int height) {
-		this.height = height;
+		this.heightWithBarrier = height;
 	}
 
 
 
 	public int getWidth() {
-		return width;
+		return widthWithBarrier;
 	}
 
 
 
 	public void setWidth(int width) {
-		this.width = width;
+		this.widthWithBarrier = width;
 	}
 
 
 
 	public Grid(int width, int height) 
 	{
-		
+		widthWithBarrier =4;
 		this.height = height;
 		this.width = width;
 		objects = new ArrayList<GameObject>();
@@ -105,10 +107,10 @@ public class Grid
 	
 	public void addBarrier()
 	{
-		int heightWithBarrier = height +2;
-		int widthWithBarrier = height +2;
+		heightWithBarrier = height +2;
+		widthWithBarrier = width +2;
 
-		for (int i= 0; i<width;i++) 
+		for (int i= 0; i<widthWithBarrier;i++) 
 		{
 			
 			objects.add(i, new BarrierBlock() );
@@ -171,7 +173,7 @@ public class Grid
 		for (GameObject i : objects) 
 		{
 			
-			if (rowCount < width)
+			if (rowCount <  widthWithBarrier)
 				gridTranslation += i +" ";
 			else
 			{

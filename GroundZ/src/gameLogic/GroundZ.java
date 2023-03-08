@@ -37,5 +37,21 @@ public class GroundZ {
 	public void newGrid() {
 		grid.newRandomGrid();
 	}
+	
+	public void sendGrid(ServerPacket packet, boolean newGrid) {
+		if(newGrid) {
+			grid.newRandomGrid();
+		}
+		JSONObject dataToSend = new JSONObject();
+		dataToSend.accumulate("grid", grid.objectsToPng());
+		//System.out.println("::"+player.toString());
+		dataToSend.accumulate("size", grid.size());
+		dataToSend.accumulate("textData", "");
+
+		dataToSend.accumulate("playerMoves", "");
+		player.resetPlayer();
+		
+		packet.sendResponse(dataToSend.toString().getBytes());
+	}
 }
 

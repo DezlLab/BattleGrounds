@@ -74,7 +74,6 @@ public class CodeRunner {
 		JSONObject dataToSend = new JSONObject();
 		dataToSend.accumulate("grid", grid.objectsToPng());
 		dataToSend.accumulate("size", grid.size());
-		dataToSend.accumulate("endOfData", false);
 		dataToSend.accumulate("textData", clientSystem.stripString());
 
 		dataToSend.accumulate("playerMoves", player.getActions());
