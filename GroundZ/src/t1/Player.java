@@ -10,7 +10,7 @@ import gameLogic.GameAction;
 
 public class Player 
 {
-	private static int Pin = 23;
+	
 	private String rotation;
 	private String look;
 	private Grid grid;
@@ -75,7 +75,7 @@ public class Player
 	public String help()
 	{
 		System.out.println("Mögliche Commands: \n\nmoveForward()\nmoveBack()\nmoveRight()\nmoveLeft()\nrotateRight()\nrotateLeft()\ncollectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. moveForward(3);\n");
-		return "Mögliche Commands: \n\nplayer.moveForward()\nplayer.moveBack()\nplayer.moveRight()\nplayer.moveLeft()\nplayer.rotateRight()\nplayer.rotateLeft()\nplayer.collectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. moveForward(3);\n";
+		return "Mögliche Commands: \n\nplayer.moveForward()\nplayer.moveBack()\nplayer.moveRight()\nplayer.moveLeft()\nplayer.rotateRight()\nplayer.rotateLeft()\nplayer.collectCoin()\nAlle move Commands können mit einer Zahl benutzt werden,\n um sie mehrmals auszuführen. Bsp. player.moveForward(3);\n";
 	}
 	//Console 
 	public void moveForward()
